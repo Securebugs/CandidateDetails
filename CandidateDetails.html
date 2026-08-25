@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Sparix Global - Candidate Application</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f3f3f3;
+
+    color: #111111;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.page {
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    padding:
+        7px
+        10px;
+}
+
+
+/* =====================================================
+   LIVE JOB TICKER
+===================================================== */
+
+.jobs-ticker {
+
+    width: 100%;
+
+    height: 32px;
+
+    flex-shrink: 0;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border:
+        1px solid #111111;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    margin-bottom: 7px;
+}
+
+
+.ticker-label {
+
+    height: 100%;
+
+    min-width: 115px;
+
+    padding:
+        0
+        12px;
+
+    background: #ffd400;
+
+    color: #111111;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: .4px;
+
+    z-index: 2;
+}
+
+
+.ticker-window {
+
+    flex: 1;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+.ticker-track {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 55px;
+
+    white-space: nowrap;
+
+    animation:
+        tickerMove 28s linear infinite;
+
+    padding-left: 25px;
+}
+
+
+.ticker-item {
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.ticker-dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    flex-shrink: 0;
+
+    background: #ffd400;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+@keyframes tickerMove {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =====================================================
+   APPLICATION CARD
+===================================================== */
+
+.application-card {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    flex: 1;
+
+    min-height: 0;
+
+    margin:
+        0
+        auto;
+
+    background: #ffffff;
+
+    border:
+        2px solid #111111;
+
+    border-radius: 13px;
+
+    box-shadow:
+        6px 6px 0 #111111;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+
+    width: 100%;
+
+    min-height: 58px;
+
+    flex-shrink: 0;
+
+    background: #ffd400;
+
+    color: #111111;
+
+    padding:
+        7px
+        25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom:
+        2px solid #111111;
+}
+
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    min-width: 0;
+}
+
+
+.company-logo {
+
+    width: 145px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+.header-title {
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    letter-spacing: -.4px;
+
+    white-space: nowrap;
+}
+
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.header-badge {
+
+    background: #111111;
+
+    color: #ffd400;
+
+    padding:
+        7px
+        11px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   FORM CONTENT
+===================================================== */
+
+.content {
+
+    flex: 1;
+
+    min-height: 0;
+
+    padding:
+        11px
+        28px
+        12px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 9px;
+
+    flex-shrink: 0;
+}
+
+
+.intro h1 {
+
+    font-size: 26px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 4px;
+}
+
+
+.intro p {
+
+    color: #707070;
+
+    font-size: 11px;
+}
+
+
+.required-note {
+
+    color: #777777;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+
+    column-gap: 11px;
+
+    row-gap: 8px;
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+.section-heading {
+
+    grid-column: 1 / -1;
+
+    padding-bottom: 4px;
+
+    border-bottom:
+        2px solid #111111;
+
+    margin-top: 1px;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    color: #222222;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.required {
+
+    color: #d00000;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+.form-group input {
+
+    width: 100%;
+
+    height: 39px;
+
+    border:
+        1px solid #cccccc;
+
+    border-radius: 6px;
+
+    background: #fafafa;
+
+    padding:
+        0
+        10px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    color: #111111;
+
+    outline: none;
+
+    transition:
+        border .2s,
+        box-shadow .2s,
+        background .2s;
+}
+
+
+.form-group input:focus {
+
+    border:
+        2px solid #111111;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            255,
+            212,
+            0,
+            .3
+        );
+}
+
+
+.form-group input::placeholder {
+
+    color: #999999;
+}
+
+
+/* =====================================================
+   INVALID INPUT
+===================================================== */
+
+.form-group input.invalid {
+
+    border:
+        2px solid #d00000;
+
+    background: #fff7f7;
+
+    box-shadow: none;
+}
+
+
+/* =====================================================
+   FIELD ERROR
+===================================================== */
+
+.field-error {
+
+    display: none;
+
+    color: #d00000;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    margin-top: 3px;
+}
+
+
+.field-error.show {
+
+    display: block;
+}
+
+
+/* =====================================================
+   OPPORTUNITY
+===================================================== */
+
+.opportunity {
+
+    grid-column: span 2;
+}
+
+
+.radio-container {
+
+    width: 100%;
+
+    height: 39px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 7px;
+}
+
+
+.radio {
+
+    position: relative;
+
+    min-width: 0;
+}
+
+
+.radio input {
+
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.radio label {
+
+    width: 100%;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border:
+        1px solid #cccccc;
+
+    border-radius: 6px;
+
+    background: #fafafa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    padding: 4px;
+
+    transition: .2s;
+}
+
+
+.radio input:checked + label {
+
+    background: #ffd400;
+
+    border:
+        2px solid #111111;
+}
+
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location {
+
+    grid-column: span 2;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    flex-shrink: 0;
+
+    margin-top: 12px;
+
+    padding-top: 10px;
+
+    border-top:
+        1px solid #e1e1e1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.footer-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    min-width: 0;
+}
+
+
+.privacy {
+
+    max-width: 350px;
+
+    color: #888888;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+}
+
+
+/* =====================================================
+   LINKEDIN BUTTON
+===================================================== */
+
+.linkedin-button {
+
+    height: 33px;
+
+    padding:
+        0
+        11px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border:
+        1px solid #111111;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    white-space: nowrap;
+
+    transition: .2s;
+}
+
+
+.linkedin-button:hover {
+
+    background: #ffd400;
+
+    color: #111111;
+}
+
+
+.linkedin-icon {
+
+    width: 15px;
+
+    height: 15px;
+
+    fill: currentColor;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.submit-btn {
+
+    height: 40px;
+
+    min-width: 175px;
+
+    padding:
+        0
+        17px;
+
+    border:
+        2px solid #111111;
+
+    border-radius: 6px;
+
+    background: #ffd400;
+
+    color: #111111;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.submit-btn:hover {
+
+    background: #111111;
+
+    color: #ffd400;
+}
+
+
+.submit-btn:disabled {
+
+    opacity: .6;
+
+    cursor: wait;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+
+    display: none;
+
+    margin-top: 6px;
+
+    padding:
+        6px
+        10px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+.status.error {
+
+    display: block;
+
+    background: #ffe5e5;
+
+    color: #b00000;
+
+    border:
+        1px solid #ffb5b5;
+}
+
+
+/* =====================================================
+   SUCCESS SCREEN
+===================================================== */
+
+.success {
+
+    display: none;
+
+    text-align: center;
+
+    padding:
+        40px
+        20px;
+}
+
+
+.success-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    margin:
+        0
+        auto
+        14px;
+
+    background: #ffd400;
+
+    border:
+        2px solid #111111;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+
+.success h2 {
+
+    font-size: 23px;
+
+    margin-bottom: 6px;
+}
+
+
+.success p {
+
+    color: #777777;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+.home-btn {
+
+    height: 40px;
+
+    min-width: 150px;
+
+    padding:
+        0
+        18px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    border:
+        2px solid #111111;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.home-btn:hover {
+
+    background: #ffd400;
+
+    color: #111111;
+}
+
+
+/* =====================================================
+   CREDIT
+===================================================== */
+
+.credit {
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    color: #777777;
+
+    font-size: 8px;
+
+    margin-top: 6px;
+
+    line-height: 12px;
+}
+
+
+.credit a {
+
+    color: #111111;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+.credit a:hover {
+
+    text-decoration: underline;
+}
+
+
+.credit-heart {
+
+    width: 12px;
+
+    height: 12px;
+
+    object-fit: cover;
+
+    vertical-align: -2px;
+
+    border-radius: 2px;
+
+    margin:
+        0
+        2px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .page {
+
+        padding:
+            5px
+            7px;
+    }
+
+
+    .header {
+
+        padding:
+            7px
+            17px;
+    }
+
+
+    .company-logo {
+
+        width: 125px;
+    }
+
+
+    .header-title {
+
+        font-size: 17px;
+    }
+
+
+    .content {
+
+        padding:
+            9px
+            17px
+            10px;
+    }
+
+
+    .intro h1 {
+
+        font-size: 23px;
+    }
+
+
+    .form {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 8px;
+    }
+
+
+    .opportunity,
+    .location {
+
+        grid-column: span 1;
+    }
+
+
+    .privacy {
+
+        max-width: 240px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 520px) {
+
+    .page {
+
+        padding:
+            3px
+            4px;
+    }
+
+
+    .jobs-ticker {
+
+        height: 27px;
+
+        margin-bottom: 4px;
+    }
+
+
+    .ticker-label {
+
+        min-width: 74px;
+
+        padding:
+            0
+            6px;
+
+        font-size: 7px;
+    }
+
+
+    .ticker-item {
+
+        font-size: 7px;
+    }
+
+
+    .ticker-track {
+
+        gap: 32px;
+    }
+
+
+    .application-card {
+
+        border-radius: 9px;
+
+        box-shadow:
+            3px 3px 0 #111111;
+    }
+
+
+    .header {
+
+        min-height: 45px;
+
+        padding:
+            5px
+            9px;
+
+        gap: 7px;
+    }
+
+
+    .logo-area {
+
+        gap: 7px;
+    }
+
+
+    .company-logo {
+
+        width: 98px;
+    }
+
+
+    .header-title {
+
+        font-size: 11px;
+    }
+
+
+    .header-badge {
+
+        padding:
+            5px
+            6px;
+
+        font-size: 6px;
+    }
+
+
+    .content {
+
+        padding:
+            7px
+            9px
+            8px;
+    }
+
+
+    .intro {
+
+        margin-bottom: 7px;
+    }
+
+
+    .intro h1 {
+
+        font-size: 18px;
+    }
+
+
+    .intro p {
+
+        font-size: 8px;
+    }
+
+
+    .required-note {
+
+        display: none;
+    }
+
+
+    .form {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: 6px;
+    }
+
+
+    .section-heading {
+
+        font-size: 7px;
+
+        padding-bottom: 3px;
+    }
+
+
+    .form-group label {
+
+        font-size: 7px;
+
+        margin-bottom: 2px;
+    }
+
+
+    .form-group input {
+
+        height: 31px;
+
+        padding:
+            0
+            6px;
+
+        font-size: 9px;
+
+        border-radius: 4px;
+    }
+
+
+    .radio-container {
+
+        height: 31px;
+
+        gap: 4px;
+    }
+
+
+    .radio label {
+
+        height: 31px;
+
+        font-size: 7px;
+
+        border-radius: 4px;
+    }
+
+
+    .footer {
+
+        margin-top: 7px;
+
+        padding-top: 7px;
+
+        gap: 6px;
+    }
+
+
+    .footer-left {
+
+        gap: 5px;
+    }
+
+
+    .privacy {
+
+        max-width: 145px;
+
+        font-size: 6px;
+    }
+
+
+    .linkedin-button {
+
+        height: 28px;
+
+        padding:
+            0
+            7px;
+
+        gap: 4px;
+
+        font-size: 7px;
+    }
+
+
+    .linkedin-icon {
+
+        width: 12px;
+
+        height: 12px;
+    }
+
+
+    .submit-btn {
+
+        height: 32px;
+
+        min-width: 112px;
+
+        font-size: 8px;
+
+        padding:
+            0
+            6px;
+    }
+
+
+    .credit {
+
+        font-size: 6px;
+
+        margin-top: 2px;
+    }
+
+
+    .credit-heart {
+
+        width: 9px;
+
+        height: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .company-logo {
+
+        width: 88px;
+    }
+
+
+    .header-title {
+
+        font-size: 9px;
+    }
+
+
+    .header-badge {
+
+        font-size: 5px;
+    }
+
+
+    .intro h1 {
+
+        font-size: 16px;
+    }
+
+
+    .intro p {
+
+        font-size: 7px;
+    }
+
+
+    .form {
+
+        gap: 4px;
+    }
+
+
+    .form-group input {
+
+        height: 29px;
+
+        font-size: 8px;
+    }
+
+
+    .radio-container,
+    .radio label {
+
+        height: 29px;
+    }
+
+
+    .radio label {
+
+        font-size: 6px;
+    }
+
+
+    .privacy {
+
+        max-width: 115px;
+
+        font-size: 5px;
+    }
+
+
+    .linkedin-button {
+
+        font-size: 6px;
+
+        padding:
+            0
+            5px;
+    }
+
+
+    .submit-btn {
+
+        min-width: 98px;
+
+        height: 30px;
+
+        font-size: 7px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+<!-- =====================================================
+     LIVE JOBS
+===================================================== -->
+
+<div class="jobs-ticker">
+
+    <div class="ticker-label">
+        🔴 LIVE JOBS
+    </div>
+
+
+    <div class="ticker-window">
+
+        <div
+            class="ticker-track"
+            id="tickerTrack"
+        >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     APPLICATION CARD
+===================================================== -->
+
+<div class="application-card">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+
+    <div class="logo-area">
+
+
+        <img
+            src="https://sparix-global.s3.ap-south-1.amazonaws.com/website/sparix-logo-dark.png"
+            alt="Sparix Global"
+            class="company-logo"
+        >
+
+
+        <div class="header-title">
+
+            Candidate Application
+
+        </div>
+
+
+    </div>
+
+
+    <div class="header-right">
+
+
+        <div class="header-badge">
+
+            CAREER OPPORTUNITIES
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FORM CONTENT
+===================================================== -->
+
+<div
+    class="content"
+    id="formContent"
+>
+
+
+<div class="intro">
+
+
+    <div>
+
+        <h1>
+            Tell us about yourself.
+        </h1>
+
+
+        <p>
+            Complete your professional details
+            for relevant opportunities.
+        </p>
+
+    </div>
+
+
+    <div class="required-note">
+
+        * Required fields
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FORM
+===================================================== -->
+
+<form id="candidateForm">
+
+
+<div class="form">
+
+
+<!-- =====================================================
+     PERSONAL INFORMATION
+===================================================== -->
+
+<div class="section-heading">
+
+    01 &nbsp; Personal Information
+
+</div>
+
+
+<!-- FULL NAME -->
+
+<div class="form-group">
+
+    <label for="fullName">
+
+        Full Name
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="text"
+        id="fullName"
+        name="fullName"
+        placeholder="Full name"
+        autocomplete="name"
+        required
+    >
+
+</div>
+
+
+<!-- PHONE -->
+
+<div class="form-group">
+
+    <label for="phone">
+
+        Phone Number
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="+91 98765 43210"
+        autocomplete="tel"
+        required
+    >
+
+
+    <div
+        id="phoneError"
+        class="field-error"
+    >
+
+        Please enter a valid phone number.
+
+    </div>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div class="form-group">
+
+    <label for="email">
+
+        Email Address
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="name@example.com"
+        autocomplete="email"
+        required
+    >
+
+
+    <div
+        id="emailError"
+        class="field-error"
+    >
+
+        Enter a valid email address.
+
+    </div>
+
+</div>
+
+
+<!-- LINKEDIN -->
+
+<div class="form-group">
+
+    <label for="linkedin">
+
+        LinkedIn Profile
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="url"
+        id="linkedin"
+        name="linkedin"
+        placeholder="https://linkedin.com/in/yourname"
+        required
+    >
+
+
+    <div
+        id="linkedinError"
+        class="field-error"
+    >
+
+        Enter a valid LinkedIn profile URL.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROFESSIONAL INFORMATION
+===================================================== -->
+
+<div class="section-heading">
+
+    02 &nbsp; Professional Information
+
+</div>
+
+
+<!-- LAST WORKING DAY -->
+
+<div class="form-group">
+
+    <label for="lastWorkingDay">
+
+        Last Working Day
+
+    </label>
+
+
+    <input
+        type="date"
+        id="lastWorkingDay"
+        name="lastWorkingDay"
+    >
+
+</div>
+
+
+<!-- NOTICE PERIOD -->
+
+<div class="form-group">
+
+    <label for="noticePeriod">
+
+        Notice Period (Days)
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="number"
+        id="noticePeriod"
+        name="noticePeriod"
+        min="0"
+        step="1"
+        placeholder="e.g. 30"
+        required
+    >
+
+
+    <div
+        id="noticeError"
+        class="field-error"
+    >
+
+        Please enter notice period in days.
+
+    </div>
+
+</div>
+
+
+<!-- CURRENT CTC -->
+
+<div class="form-group">
+
+    <label for="currentCTC">
+
+        Current CTC (LPA)
+
+    </label>
+
+
+    <input
+        type="number"
+        id="currentCTC"
+        name="currentCTC"
+        min="0"
+        step="0.1"
+        placeholder="e.g. 8.5"
+    >
+
+</div>
+
+
+<!-- EXPECTED CTC -->
+
+<div class="form-group">
+
+    <label for="expectedCTC">
+
+        Expected CTC (LPA)
+
+    </label>
+
+
+    <input
+        type="number"
+        id="expectedCTC"
+        name="expectedCTC"
+        min="0"
+        step="0.1"
+        placeholder="e.g. 12"
+    >
+
+</div>
+
+
+<!-- =====================================================
+     OPPORTUNITY
+===================================================== -->
+
+<div class="section-heading">
+
+    03 &nbsp; Opportunity & Location
+
+</div>
+
+
+<!-- OPPORTUNITY PREFERENCE -->
+
+<div class="form-group opportunity">
+
+    <label>
+
+        Opportunity Preference
+
+    </label>
+
+
+    <div class="radio-container">
+
+
+        <div class="radio">
+
+            <input
+                type="radio"
+                id="fulltime"
+                name="opportunity"
+                value="Full-time only"
+                checked
+            >
+
+
+            <label for="fulltime">
+
+                Full-time only
+
+            </label>
+
+        </div>
+
+
+        <div class="radio">
+
+            <input
+                type="radio"
+                id="freelance"
+                name="opportunity"
+                value="Full-time + Parallel/Freelance"
+            >
+
+
+            <label for="freelance">
+
+                Full-time + Freelance
+
+            </label>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- LOCATION -->
+
+<div class="form-group location">
+
+    <label for="preferredLocation">
+
+        Preferred Location
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="text"
+        id="preferredLocation"
+        name="preferredLocation"
+        placeholder="Bangalore, Hyderabad, Remote..."
+        required
+    >
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div class="footer">
+
+
+    <div class="footer-left">
+
+
+        <div class="privacy">
+
+            Your information will be used only
+            for recruitment and relevant job
+            opportunities.
+
+        </div>
+
+
+        <!-- LINKEDIN -->
+
+        <a
+            href="https://www.linkedin.com/in/iamthakurofficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="linkedin-button"
+            title="Visit LinkedIn Profile"
+        >
+
+
+            <svg
+                class="linkedin-icon"
+                viewBox="0 0 24 24"
+            >
+
+                <path
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V8.99H3.54v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
+                />
+
+            </svg>
+
+
+            <span>
+                LinkedIn
+            </span>
+
+
+        </a>
+
+
+    </div>
+
+
+    <button
+        type="submit"
+        class="submit-btn"
+        id="submitBtn"
+    >
+
+        Submit Application →
+
+    </button>
+
+
+</div>
+
+
+<div
+    id="status"
+    class="status"
+></div>
+
+
+</form>
+
+
+</div>
+
+
+<!-- =====================================================
+     SUCCESS MESSAGE
+===================================================== -->
+
+<div
+    class="success"
+    id="successMessage"
+>
+
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+
+    <h2>
+        Application Submitted
+    </h2>
+
+
+    <p>
+        Thank you. Your application has been
+        successfully received.
+    </p>
+
+
+    <button
+        type="button"
+        class="home-btn"
+        id="homeButton"
+    >
+
+        ← Back to Application
+
+    </button>
+
+
+</div>
+
+
+</div>
+
+
+<!-- =====================================================
+     CREDIT
+===================================================== -->
+
+<div class="credit">
+
+    Made with ❤ by
+
+    <a
+        href="https://www.linkedin.com/in/iamthakurofficial/"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+
+        Nandan Thakur
+
+    </a>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   GOOGLE APPS SCRIPT URL
+===================================================== */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzUzsh9eyHIAZPmYrNVLWe9YK7gwaY9bnBaiBAtFj4iMcoKpKf6p3_ez64NyxCtrxd2/exec";
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const form =
+document.getElementById(
+    "candidateForm"
+);
+
+
+const formContent =
+document.getElementById(
+    "formContent"
+);
+
+
+const successMessage =
+document.getElementById(
+    "successMessage"
+);
+
+
+const submitButton =
+document.getElementById(
+    "submitBtn"
+);
+
+
+const homeButton =
+document.getElementById(
+    "homeButton"
+);
+
+
+const statusMessage =
+document.getElementById(
+    "status"
+);
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+const phone =
+document.getElementById(
+    "phone"
+);
+
+
+const email =
+document.getElementById(
+    "email"
+);
+
+
+const linkedin =
+document.getElementById(
+    "linkedin"
+);
+
+
+const noticePeriod =
+document.getElementById(
+    "noticePeriod"
+);
+
+
+/* =====================================================
+   ERROR ELEMENTS
+===================================================== */
+
+const phoneError =
+document.getElementById(
+    "phoneError"
+);
+
+
+const emailError =
+document.getElementById(
+    "emailError"
+);
+
+
+const linkedinError =
+document.getElementById(
+    "linkedinError"
+);
+
+
+const noticeError =
+document.getElementById(
+    "noticeError"
+);
+
+
+/* =====================================================
+   EMAIL VALIDATION
+===================================================== */
+
+function validateEmail(value) {
+
+    const pattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    return pattern.test(
+        value
+    );
+}
+
+
+/* =====================================================
+   PHONE VALIDATION
+===================================================== */
+
+function validatePhone(value) {
+
+    const digits =
+        value.replace(
+            /\D/g,
+            ""
+        );
+
+    return digits.length >= 10;
+}
+
+
+/* =====================================================
+   LINKEDIN VALIDATION
+===================================================== */
+
+function validateLinkedIn(value) {
+
+    const pattern =
+        /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_%\-]+\/?$/i;
+
+    return pattern.test(
+        value.trim()
+    );
+}
+
+
+/* =====================================================
+   NOTICE PERIOD VALIDATION
+===================================================== */
+
+function validateNotice(value) {
+
+    if (
+        value === ""
+    ) {
+
+        return false;
+    }
+
+
+    const number =
+        Number(value);
+
+
+    return (
+        Number.isInteger(number) &&
+        number >= 0
+    );
+}
+
+
+/* =====================================================
+   FIELD ERROR
+===================================================== */
+
+function showFieldError(
+    input,
+    error
+) {
+
+    input.classList.add(
+        "invalid"
+    );
+
+    error.classList.add(
+        "show"
+    );
+}
+
+
+function hideFieldError(
+    input,
+    error
+) {
+
+    input.classList.remove(
+        "invalid"
+    );
+
+    error.classList.remove(
+        "show"
+    );
+}
+
+
+/* =====================================================
+   LIVE EMAIL VALIDATION
+===================================================== */
+
+email.addEventListener(
+    "input",
+    function() {
+
+        if (
+            email.value === "" ||
+            validateEmail(
+                email.value.trim()
+            )
+        ) {
+
+            hideFieldError(
+                email,
+                emailError
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   LIVE LINKEDIN VALIDATION
+===================================================== */
+
+linkedin.addEventListener(
+    "input",
+    function() {
+
+        if (
+            linkedin.value !== "" &&
+            validateLinkedIn(
+                linkedin.value.trim()
+            )
+        ) {
+
+            hideFieldError(
+                linkedin,
+                linkedinError
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   LIVE NOTICE VALIDATION
+===================================================== */
+
+noticePeriod.addEventListener(
+    "input",
+    function() {
+
+        if (
+            validateNotice(
+                noticePeriod.value
+            )
+        ) {
+
+            hideFieldError(
+                noticePeriod,
+                noticeError
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   FORM SUBMISSION
+===================================================== */
+
+form.addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+
+        hideStatus();
+
+
+        /* HTML validation */
+
+        if (
+            !form.checkValidity()
+        ) {
+
+            form.reportValidity();
+
+            return;
+        }
+
+
+        /* Phone */
+
+        if (
+            !validatePhone(
+                phone.value.trim()
+            )
+        ) {
+
+            showFieldError(
+                phone,
+                phoneError
+            );
+
+            phone.focus();
+
+            return;
+        }
+
+
+        /* Email */
+
+        if (
+            !validateEmail(
+                email.value.trim()
+            )
+        ) {
+
+            showFieldError(
+                email,
+                emailError
+            );
+
+            email.focus();
+
+            return;
+        }
+
+
+        /* LinkedIn */
+
+        if (
+            !validateLinkedIn(
+                linkedin.value.trim()
+            )
+        ) {
+
+            showFieldError(
+                linkedin,
+                linkedinError
+            );
+
+            linkedin.focus();
+
+            return;
+        }
+
+
+        /* Notice */
+
+        if (
+            !validateNotice(
+                noticePeriod.value
+            )
+        ) {
+
+            showFieldError(
+                noticePeriod,
+                noticeError
+            );
+
+            noticePeriod.focus();
+
+            return;
+        }
+
+
+        /* Submit button */
+
+        submitButton.disabled =
+            true;
+
+
+        submitButton.innerHTML =
+            "Submitting...";
+
+
+        /* =================================================
+           COLLECT FORM DATA
+        ================================================= */
+
+        const formData = {
+
+            fullName:
+                document
+                .getElementById(
+                    "fullName"
+                )
+                .value
+                .trim(),
+
+
+            phone:
+                phone.value.trim(),
+
+
+            email:
+                email.value.trim(),
+
+
+            linkedin:
+                linkedin.value.trim(),
+
+
+            lastWorkingDay:
+                document
+                .getElementById(
+                    "lastWorkingDay"
+                )
+                .value,
+
+
+            noticePeriod:
+                noticePeriod.value,
+
+
+            currentCTC:
+                document
+                .getElementById(
+                    "currentCTC"
+                )
+                .value,
+
+
+            expectedCTC:
+                document
+                .getElementById(
+                    "expectedCTC"
+                )
+                .value,
+
+
+            opportunity:
+                document
+                .querySelector(
+                    'input[name="opportunity"]:checked'
+                )
+                .value,
+
+
+            preferredLocation:
+                document
+                .getElementById(
+                    "preferredLocation"
+                )
+                .value
+                .trim(),
+
+
+            jobApplied: ""
+
+        };
+
+
+        /* =================================================
+           SEND TO GOOGLE SHEETS
+        ================================================= */
+
+        try {
+
+            await fetch(
+                GOOGLE_SCRIPT_URL,
+                {
+
+                    method: "POST",
+
+                    mode: "no-cors",
+
+                    headers: {
+
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+
+                    },
+
+                    body:
+                        JSON.stringify(
+                            formData
+                        )
+
+                }
+            );
+
+
+            showSuccess();
+
+        }
+
+
+        catch (error) {
+
+            console.error(
+                "Submission Error:",
+                error
+            );
+
+
+            submitButton.disabled =
+                false;
+
+
+            submitButton.innerHTML =
+                "Submit Application →";
+
+
+            showStatus(
+                "Unable to submit application. Please try again."
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SHOW SUCCESS
+===================================================== */
+
+function showSuccess() {
+
+    formContent.style.display =
+        "none";
+
+
+    successMessage.style.display =
+        "block";
+
+}
+
+
+/* =====================================================
+   BACK TO APPLICATION
+===================================================== */
+
+homeButton.addEventListener(
+    "click",
+    function() {
+
+        /* Reset form */
+
+        form.reset();
+
+
+        /* Reset button */
+
+        submitButton.disabled =
+            false;
+
+
+        submitButton.innerHTML =
+            "Submit Application →";
+
+
+        /* Remove errors */
+
+        [
+            phone,
+            email,
+            linkedin,
+            noticePeriod
+        ].forEach(
+            function(input) {
+
+                input.classList.remove(
+                    "invalid"
+                );
+
+            }
+        );
+
+
+        [
+            phoneError,
+            emailError,
+            linkedinError,
+            noticeError
+        ].forEach(
+            function(error) {
+
+                error.classList.remove(
+                    "show"
+                );
+
+            }
+        );
+
+
+        hideStatus();
+
+
+        /* Show form */
+
+        successMessage.style.display =
+            "none";
+
+
+        formContent.style.display =
+            "flex";
+
+    }
+);
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function showStatus(message) {
+
+    statusMessage.textContent =
+        message;
+
+
+    statusMessage.className =
+        "status error";
+
+
+    statusMessage.style.display =
+        "block";
+
+}
+
+
+function hideStatus() {
+
+    statusMessage.textContent =
+        "";
+
+
+    statusMessage.className =
+        "status";
+
+
+    statusMessage.style.display =
+        "none";
+
+}
+
+
+/* =====================================================
+   LIVE JOBS
+=====================================================
+
+   Temporary job list.
+
+   Later this can be connected to a
+   Google Sheet containing:
+
+   Job ID
+   Job Title
+   Location
+   Status
+
+   Only Status = LIVE will be displayed.
+
+===================================================== */
+
+const liveJobs = [
+
+    "Senior Java Developer — Bangalore",
+
+    "MuleSoft Developer — Remote",
+
+    "AEM Developer — Hyderabad",
+
+    "Microsoft Dynamics 365 Developer — Pune",
+
+    "Java Tech Lead — Bangalore",
+
+    "Senior .NET Developer — Hyderabad",
+
+    "Salesforce Developer — Remote"
+
+];
+
+
+function loadLiveJobs() {
+
+    const ticker =
+        document.getElementById(
+            "tickerTrack"
+        );
+
+
+    const jobsHTML =
+        liveJobs
+        .map(
+            function(job) {
+
+                return `
+
+                    <span class="ticker-item">
+
+                        <span class="ticker-dot"></span>
+
+                        ${job}
+
+                    </span>
+
+                `;
+
+            }
+        )
+        .join("");
+
+
+    /*
+       Duplicate the list so the
+       ticker can loop continuously.
+    */
+
+    ticker.innerHTML =
+        jobsHTML +
+        jobsHTML;
+
+}
+
+
+loadLiveJobs();
+
+</script>
+
+
+</body>
+
+</html>
