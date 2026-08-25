@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>Sparix Global - Candidate Application</title>
+<title>Candidate Application</title>
 
 
 <style>
@@ -45,7 +45,7 @@ body {
 
     background: #f3f3f3;
 
-    color: #111;
+    color: #111111;
 }
 
 
@@ -58,12 +58,12 @@ body {
     width: 100%;
     height: 100vh;
 
+    padding: 6px 9px;
+
     display: flex;
     flex-direction: column;
 
     overflow: hidden;
-
-    padding: 7px 10px;
 }
 
 
@@ -74,20 +74,18 @@ body {
 .jobs-ticker {
 
     width: 100%;
-    height: 32px;
+    height: 34px;
 
     flex-shrink: 0;
 
-    background: #111;
-
-    color: #fff;
-
-    border: 1px solid #111;
-
-    border-radius: 6px;
-
     display: flex;
     align-items: center;
+
+    background: #111111;
+
+    border: 1px solid #111111;
+
+    border-radius: 6px;
 
     overflow: hidden;
 
@@ -99,26 +97,25 @@ body {
 
     height: 100%;
 
-    min-width: 115px;
+    min-width: 120px;
 
     padding: 0 12px;
 
-    background: #ffd400;
-
-    color: #111;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
+
+    background: #ffd400;
+
+    color: #111111;
 
     font-size: 9px;
 
     font-weight: 900;
 
-    letter-spacing: .4px;
+    letter-spacing: .5px;
 
-    z-index: 3;
+    z-index: 5;
 }
 
 
@@ -130,10 +127,7 @@ body {
 
     overflow: hidden;
 
-    white-space: nowrap;
-
     display: flex;
-
     align-items: center;
 
     position: relative;
@@ -146,14 +140,14 @@ body {
 
     align-items: center;
 
-    gap: 55px;
+    gap: 50px;
 
     white-space: nowrap;
 
-    animation:
-        tickerMove 30s linear infinite;
-
     padding-left: 25px;
+
+    animation:
+        tickerAnimation 32s linear infinite;
 }
 
 
@@ -165,17 +159,15 @@ body {
 
 .ticker-item {
 
-    border: none;
+    border: 0;
+
+    outline: 0;
 
     background: transparent;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-family: inherit;
-
-    font-size: 10px;
-
-    font-weight: 700;
+    cursor: pointer;
 
     display: inline-flex;
 
@@ -183,91 +175,83 @@ body {
 
     gap: 7px;
 
-    cursor: pointer;
+    white-space: nowrap;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 800;
 
     padding: 0;
 
-    white-space: nowrap;
-
-    transition: color .2s;
+    transition:
+        color .2s,
+        transform .2s;
 }
 
 
 .ticker-item:hover {
 
     color: #ffd400;
+
+    transform: scale(1.03);
 }
 
 
 .ticker-dot {
 
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
 
     flex-shrink: 0;
 
-    background: #ffd400;
-
     border-radius: 50%;
 
-    display: inline-block;
+    background: #ffd400;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255,212,0,.12);
 }
 
 
-.ticker-loading {
+.ticker-loading,
+.ticker-empty,
+.ticker-error {
 
-    font-size: 10px;
+    color: #dddddd;
 
-    color: #ccc;
+    font-size: 9px;
+
+    font-weight: 700;
 
     padding-left: 20px;
 }
 
 
-.ticker-empty {
+.ticker-error {
 
-    font-size: 10px;
-
-    color: #ccc;
-
-    padding-left: 20px;
+    color: #ff8c8c;
 }
 
 
-@keyframes tickerMove {
+@keyframes tickerAnimation {
 
     0% {
-        transform: translateX(0);
+
+        transform:
+            translateX(0);
+
     }
 
     100% {
-        transform: translateX(-50%);
+
+        transform:
+            translateX(-50%);
+
     }
 
-}
-
-
-/* =====================================================
-   HIDDEN CEIPAL WIDGET
-===================================================== */
-
-#ceipal-widget-source {
-
-    position: fixed;
-
-    left: -10000px;
-
-    top: -10000px;
-
-    width: 1px;
-
-    height: 1px;
-
-    overflow: hidden;
-
-    opacity: 0;
-
-    pointer-events: none;
 }
 
 
@@ -279,7 +263,7 @@ body {
 
     width: 100%;
 
-    max-width: 1150px;
+    max-width: 1180px;
 
     flex: 1;
 
@@ -287,13 +271,14 @@ body {
 
     margin: 0 auto;
 
-    background: #fff;
+    background: #ffffff;
 
-    border: 2px solid #111;
+    border: 2px solid #111111;
 
     border-radius: 13px;
 
-    box-shadow: 6px 6px 0 #111;
+    box-shadow:
+        6px 6px 0 #111111;
 
     overflow: hidden;
 
@@ -309,17 +294,15 @@ body {
 
 .header {
 
-    width: 100%;
-
-    min-height: 58px;
+    min-height: 60px;
 
     flex-shrink: 0;
 
+    padding: 7px 25px;
+
     background: #ffd400;
 
-    color: #111;
-
-    padding: 7px 25px;
+    border-bottom: 2px solid #111111;
 
     display: flex;
 
@@ -328,8 +311,6 @@ body {
     justify-content: space-between;
 
     gap: 15px;
-
-    border-bottom: 2px solid #111;
 }
 
 
@@ -349,8 +330,6 @@ body {
 
     width: 145px;
 
-    max-width: 100%;
-
     height: auto;
 
     display: block;
@@ -365,31 +344,21 @@ body {
 
     font-weight: 900;
 
-    letter-spacing: -.4px;
+    letter-spacing: -.5px;
 
     white-space: nowrap;
 }
 
 
-.header-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-}
-
-
 .header-badge {
 
-    background: #111;
+    background: #111111;
 
     color: #ffd400;
 
-    padding: 7px 11px;
-
     border-radius: 5px;
+
+    padding: 7px 11px;
 
     font-size: 9px;
 
@@ -409,15 +378,13 @@ body {
 
     min-height: 0;
 
-    padding: 11px 28px 12px;
+    padding: 10px 28px 10px;
+
+    overflow: hidden;
 
     display: flex;
 
     flex-direction: column;
-
-    justify-content: flex-start;
-
-    overflow: hidden;
 }
 
 
@@ -427,6 +394,8 @@ body {
 
 .intro {
 
+    flex-shrink: 0;
+
     display: flex;
 
     align-items: center;
@@ -435,15 +404,13 @@ body {
 
     gap: 20px;
 
-    margin-bottom: 9px;
-
-    flex-shrink: 0;
+    margin-bottom: 7px;
 }
 
 
 .intro h1 {
 
-    font-size: 26px;
+    font-size: 25px;
 
     line-height: 1;
 
@@ -457,15 +424,15 @@ body {
 
 .intro p {
 
-    color: #707070;
+    font-size: 10px;
 
-    font-size: 11px;
+    color: #777777;
 }
 
 
 .required-note {
 
-    color: #777;
+    color: #777777;
 
     font-size: 9px;
 
@@ -474,8 +441,54 @@ body {
 
 
 /* =====================================================
+   SELECTED JOB
+===================================================== */
+
+.selected-job {
+
+    display: none;
+
+    flex-shrink: 0;
+
+    background: #fff7c7;
+
+    border: 1px solid #e2c300;
+
+    border-radius: 5px;
+
+    padding: 5px 9px;
+
+    margin-bottom: 6px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+}
+
+
+.selected-job.show {
+
+    display: block;
+}
+
+
+.selected-job span {
+
+    font-weight: 900;
+}
+
+
+/* =====================================================
    FORM
 ===================================================== */
+
+#candidateForm {
+
+    width: 100%;
+
+    min-height: 0;
+}
+
 
 .form {
 
@@ -489,23 +502,25 @@ body {
             minmax(0, 1fr)
         );
 
-    column-gap: 11px;
-
-    row-gap: 8px;
+    gap: 7px 11px;
 }
 
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
 
 .section-heading {
 
     grid-column: 1 / -1;
 
-    padding-bottom: 4px;
+    border-bottom: 2px solid #111111;
 
-    border-bottom: 2px solid #111;
+    padding-bottom: 3px;
 
     margin-top: 1px;
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 900;
 
@@ -515,9 +530,11 @@ body {
 }
 
 
-.form-group {
+/* =====================================================
+   FORM GROUP
+===================================================== */
 
-    width: 100%;
+.form-group {
 
     min-width: 0;
 }
@@ -527,13 +544,13 @@ body {
 
     display: block;
 
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 
-    font-size: 10px;
+    color: #222222;
+
+    font-size: 9px;
 
     font-weight: 800;
-
-    color: #222;
 
     white-space: nowrap;
 
@@ -549,41 +566,52 @@ body {
 }
 
 
+.optional {
+
+    color: #888888;
+
+    font-weight: 600;
+}
+
+
 /* =====================================================
-   INPUTS
+   INPUT
 ===================================================== */
 
 .form-group input {
 
     width: 100%;
 
-    height: 39px;
+    height: 36px;
 
-    border: 1px solid #ccc;
-
-    border-radius: 6px;
+    padding: 0 9px;
 
     background: #fafafa;
 
-    padding: 0 10px;
+    color: #111111;
 
-    font-family: inherit;
+    border: 1px solid #cccccc;
 
-    font-size: 12px;
-
-    color: #111;
+    border-radius: 5px;
 
     outline: none;
 
-    transition: .2s;
+    font-family: inherit;
+
+    font-size: 11px;
+
+    transition:
+        border .2s,
+        box-shadow .2s,
+        background .2s;
 }
 
 
 .form-group input:focus {
 
-    border: 2px solid #111;
+    background: #ffffff;
 
-    background: #fff;
+    border: 2px solid #111111;
 
     box-shadow:
         0 0 0 3px
@@ -591,7 +619,7 @@ body {
             255,
             212,
             0,
-            .3
+            .25
         );
 }
 
@@ -600,9 +628,13 @@ body {
 
     border: 2px solid #d00000;
 
-    background: #fff7f7;
+    background: #fff5f5;
 }
 
+
+/* =====================================================
+   ERROR
+===================================================== */
 
 .field-error {
 
@@ -610,11 +642,11 @@ body {
 
     color: #d00000;
 
-    font-size: 8px;
+    font-size: 7px;
 
     font-weight: 700;
 
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 
@@ -625,7 +657,7 @@ body {
 
 
 /* =====================================================
-   JOB APPLIED / RESUME
+   JOB / RESUME
 ===================================================== */
 
 .job-applied {
@@ -654,7 +686,7 @@ body {
 
     width: 100%;
 
-    height: 39px;
+    height: 36px;
 
     display: grid;
 
@@ -662,7 +694,7 @@ body {
         1fr
         1fr;
 
-    gap: 7px;
+    gap: 6px;
 }
 
 
@@ -686,7 +718,7 @@ body {
 
     width: 100%;
 
-    height: 39px;
+    height: 36px;
 
     display: flex;
 
@@ -696,17 +728,17 @@ body {
 
     text-align: center;
 
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
 
-    border-radius: 6px;
+    border-radius: 5px;
 
     background: #fafafa;
 
-    font-size: 9px;
+    cursor: pointer;
+
+    font-size: 8px;
 
     font-weight: 800;
-
-    cursor: pointer;
 
     padding: 4px;
 
@@ -718,7 +750,7 @@ body {
 
     background: #ffd400;
 
-    border: 2px solid #111;
+    border: 2px solid #111111;
 }
 
 
@@ -733,54 +765,16 @@ body {
 
 
 /* =====================================================
-   SELECTED JOB INDICATOR
-===================================================== */
-
-.selected-job {
-
-    display: none;
-
-    margin-bottom: 8px;
-
-    padding: 6px 9px;
-
-    background: #fff8cc;
-
-    border: 1px solid #e4c000;
-
-    border-radius: 5px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-}
-
-
-.selected-job.show {
-
-    display: block;
-}
-
-
-.selected-job span {
-
-    font-weight: 900;
-}
-
-
-/* =====================================================
    FOOTER
 ===================================================== */
 
 .footer {
 
-    flex-shrink: 0;
+    margin-top: 8px;
 
-    margin-top: 12px;
+    padding-top: 7px;
 
-    padding-top: 10px;
-
-    border-top: 1px solid #e1e1e1;
+    border-top: 1px solid #e3e3e3;
 
     display: flex;
 
@@ -788,7 +782,7 @@ body {
 
     justify-content: space-between;
 
-    gap: 15px;
+    gap: 10px;
 }
 
 
@@ -798,7 +792,7 @@ body {
 
     align-items: center;
 
-    gap: 11px;
+    gap: 10px;
 
     min-width: 0;
 }
@@ -806,13 +800,13 @@ body {
 
 .privacy {
 
-    max-width: 350px;
+    max-width: 340px;
 
-    color: #888;
+    color: #888888;
 
-    font-size: 8px;
+    font-size: 7px;
 
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 
@@ -822,9 +816,9 @@ body {
 
 .linkedin-button {
 
-    height: 33px;
+    height: 31px;
 
-    padding: 0 11px;
+    padding: 0 10px;
 
     display: inline-flex;
 
@@ -832,19 +826,19 @@ body {
 
     justify-content: center;
 
-    gap: 7px;
+    gap: 6px;
 
-    background: #111;
+    background: #111111;
 
-    color: #fff;
+    color: #ffffff;
 
-    border: 1px solid #111;
+    border: 1px solid #111111;
 
     border-radius: 5px;
 
     text-decoration: none;
 
-    font-size: 9px;
+    font-size: 8px;
 
     font-weight: 900;
 
@@ -858,15 +852,15 @@ body {
 
     background: #ffd400;
 
-    color: #111;
+    color: #111111;
 }
 
 
 .linkedin-icon {
 
-    width: 15px;
+    width: 14px;
 
-    height: 15px;
+    height: 14px;
 
     fill: currentColor;
 }
@@ -878,25 +872,27 @@ body {
 
 .submit-btn {
 
-    height: 40px;
+    height: 38px;
 
-    min-width: 175px;
+    min-width: 170px;
 
-    padding: 0 17px;
+    padding: 0 15px;
 
-    border: 2px solid #111;
+    border: 2px solid #111111;
 
-    border-radius: 6px;
+    border-radius: 5px;
 
     background: #ffd400;
 
-    color: #111;
-
-    font-size: 11px;
-
-    font-weight: 900;
+    color: #111111;
 
     cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 900;
 
     transition: .2s;
 }
@@ -904,7 +900,7 @@ body {
 
 .submit-btn:hover {
 
-    background: #111;
+    background: #111111;
 
     color: #ffd400;
 }
@@ -912,7 +908,7 @@ body {
 
 .submit-btn:disabled {
 
-    opacity: .6;
+    opacity: .55;
 
     cursor: wait;
 }
@@ -926,17 +922,17 @@ body {
 
     display: none;
 
-    margin-top: 6px;
+    margin-top: 5px;
 
-    padding: 6px 10px;
+    padding: 5px 8px;
 
-    border-radius: 5px;
-
-    font-size: 9px;
-
-    font-weight: 700;
+    border-radius: 4px;
 
     text-align: center;
+
+    font-size: 8px;
+
+    font-weight: 700;
 }
 
 
@@ -944,11 +940,11 @@ body {
 
     display: block;
 
-    background: #ffe5e5;
+    color: #a90000;
 
-    color: #b00000;
+    background: #ffe7e7;
 
-    border: 1px solid #ffb5b5;
+    border: 1px solid #ffbaba;
 }
 
 
@@ -962,7 +958,7 @@ body {
 
     text-align: center;
 
-    padding: 40px 20px;
+    padding: 35px 20px;
 }
 
 
@@ -972,19 +968,19 @@ body {
 
     height: 58px;
 
-    margin: 0 auto 14px;
-
-    background: #ffd400;
-
-    border: 2px solid #111;
-
-    border-radius: 50%;
+    margin: 0 auto 12px;
 
     display: flex;
 
     align-items: center;
 
     justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffd400;
+
+    border: 2px solid #111111;
 
     font-size: 25px;
 
@@ -1002,9 +998,9 @@ body {
 
 .success p {
 
-    color: #777;
+    color: #777777;
 
-    font-size: 12px;
+    font-size: 11px;
 
     margin-bottom: 18px;
 }
@@ -1012,25 +1008,25 @@ body {
 
 .home-btn {
 
-    height: 40px;
+    height: 39px;
 
     min-width: 150px;
 
-    padding: 0 18px;
+    padding: 0 17px;
 
-    background: #111;
+    border: 2px solid #111111;
 
-    color: #fff;
+    border-radius: 5px;
 
-    border: 2px solid #111;
+    background: #111111;
 
-    border-radius: 6px;
-
-    font-size: 10px;
-
-    font-weight: 900;
+    color: #ffffff;
 
     cursor: pointer;
+
+    font-size: 9px;
+
+    font-weight: 900;
 
     transition: .2s;
 }
@@ -1040,7 +1036,7 @@ body {
 
     background: #ffd400;
 
-    color: #111;
+    color: #111111;
 }
 
 
@@ -1052,41 +1048,41 @@ body {
 
     flex-shrink: 0;
 
-    text-align: center;
+    height: 15px;
 
-    color: #777;
+    display: flex;
 
-    font-size: 8px;
+    align-items: center;
 
-    margin-top: 4px;
+    justify-content: center;
 
-    line-height: 12px;
+    color: #777777;
+
+    font-size: 7px;
 }
 
 
 .credit a {
 
-    color: #111;
-
-    font-weight: 800;
+    color: #111111;
 
     text-decoration: none;
+
+    font-weight: 900;
 }
 
 
 .credit-heart {
 
-    width: 12px;
+    width: 10px;
 
-    height: 12px;
+    height: 10px;
+
+    margin: 0 2px;
 
     object-fit: cover;
 
-    vertical-align: -2px;
-
     border-radius: 2px;
-
-    margin: 0 2px;
 }
 
 
@@ -1095,13 +1091,6 @@ body {
 ===================================================== */
 
 @media (max-width: 800px) {
-
-    .page {
-
-        padding:
-            5px 7px;
-    }
-
 
     .header {
 
@@ -1112,26 +1101,20 @@ body {
 
     .company-logo {
 
-        width: 125px;
+        width: 120px;
     }
 
 
     .header-title {
 
-        font-size: 17px;
+        font-size: 16px;
     }
 
 
     .content {
 
         padding:
-            9px 17px 10px;
-    }
-
-
-    .intro h1 {
-
-        font-size: 23px;
+            9px 17px;
     }
 
 
@@ -1142,8 +1125,6 @@ body {
                 2,
                 minmax(0, 1fr)
             );
-
-        gap: 8px;
     }
 
 
@@ -1181,9 +1162,9 @@ body {
 
     .ticker-label {
 
-        min-width: 74px;
+        min-width: 76px;
 
-        padding: 0 6px;
+        padding: 0 5px;
 
         font-size: 7px;
     }
@@ -1197,7 +1178,7 @@ body {
 
     .ticker-track {
 
-        gap: 32px;
+        gap: 30px;
     }
 
 
@@ -1206,13 +1187,13 @@ body {
         border-radius: 9px;
 
         box-shadow:
-            3px 3px 0 #111;
+            3px 3px 0 #111111;
     }
 
 
     .header {
 
-        min-height: 45px;
+        min-height: 44px;
 
         padding:
             5px 9px;
@@ -1227,13 +1208,13 @@ body {
 
     .company-logo {
 
-        width: 98px;
+        width: 95px;
     }
 
 
     .header-title {
 
-        font-size: 11px;
+        font-size: 10px;
     }
 
 
@@ -1242,32 +1223,32 @@ body {
         padding:
             5px 6px;
 
-        font-size: 6px;
+        font-size: 5px;
     }
 
 
     .content {
 
         padding:
-            7px 9px 8px;
+            7px 9px;
     }
 
 
     .intro {
 
-        margin-bottom: 7px;
+        margin-bottom: 5px;
     }
 
 
     .intro h1 {
 
-        font-size: 18px;
+        font-size: 17px;
     }
 
 
     .intro p {
 
-        font-size: 8px;
+        font-size: 7px;
     }
 
 
@@ -1279,27 +1260,21 @@ body {
 
     .form {
 
-        grid-template-columns:
-            repeat(
-                2,
-                minmax(0, 1fr)
-            );
-
-        gap: 6px;
+        gap: 5px;
     }
 
 
     .section-heading {
 
-        font-size: 7px;
+        font-size: 6px;
 
-        padding-bottom: 3px;
+        padding-bottom: 2px;
     }
 
 
     .form-group label {
 
-        font-size: 7px;
+        font-size: 6px;
 
         margin-bottom: 2px;
     }
@@ -1307,12 +1282,12 @@ body {
 
     .form-group input {
 
-        height: 31px;
+        height: 29px;
 
         padding:
             0 6px;
 
-        font-size: 9px;
+        font-size: 8px;
 
         border-radius: 4px;
     }
@@ -1321,13 +1296,13 @@ body {
     .radio-container,
     .radio label {
 
-        height: 31px;
+        height: 29px;
     }
 
 
     .radio label {
 
-        font-size: 7px;
+        font-size: 6px;
 
         border-radius: 4px;
     }
@@ -1335,155 +1310,116 @@ body {
 
     .footer {
 
-        margin-top: 7px;
+        margin-top: 5px;
 
-        padding-top: 7px;
-
-        gap: 6px;
+        padding-top: 5px;
     }
 
 
     .privacy {
 
-        max-width: 145px;
+        max-width: 130px;
 
-        font-size: 6px;
+        font-size: 5px;
     }
 
 
     .linkedin-button {
 
-        height: 28px;
+        height: 26px;
 
         padding:
-            0 7px;
+            0 6px;
 
-        gap: 4px;
-
-        font-size: 7px;
+        font-size: 6px;
     }
 
 
     .linkedin-icon {
 
-        width: 12px;
+        width: 11px;
 
-        height: 12px;
+        height: 11px;
     }
 
 
     .submit-btn {
 
-        height: 32px;
+        height: 30px;
 
-        min-width: 112px;
-
-        font-size: 8px;
+        min-width: 105px;
 
         padding:
-            0 6px;
+            0 7px;
+
+        font-size: 7px;
     }
 
 
     .credit {
 
-        font-size: 6px;
-
-        margin-top: 2px;
-    }
-
-
-    .credit-heart {
-
-        width: 9px;
-
-        height: 9px;
+        font-size: 5px;
     }
 
 }
 
 
 /* =====================================================
-   VERY SMALL
+   SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 360px) {
 
     .company-logo {
 
-        width: 88px;
+        width: 82px;
     }
 
 
     .header-title {
 
-        font-size: 9px;
+        font-size: 8px;
     }
 
 
     .header-badge {
 
-        font-size: 5px;
+        display: none;
     }
 
 
     .intro h1 {
 
-        font-size: 16px;
-    }
-
-
-    .form {
-
-        gap: 4px;
+        font-size: 15px;
     }
 
 
     .form-group input {
 
-        height: 29px;
+        height: 27px;
 
-        font-size: 8px;
+        font-size: 7px;
     }
 
 
     .radio-container,
     .radio label {
 
-        height: 29px;
+        height: 27px;
     }
 
 
     .radio label {
 
-        font-size: 6px;
-    }
-
-
-    .privacy {
-
-        max-width: 115px;
-
         font-size: 5px;
-    }
-
-
-    .linkedin-button {
-
-        font-size: 6px;
-
-        padding:
-            0 5px;
     }
 
 
     .submit-btn {
 
-        min-width: 98px;
+        min-width: 90px;
 
-        height: 30px;
-
-        font-size: 7px;
+        font-size: 6px;
     }
 
 }
@@ -1500,7 +1436,7 @@ body {
 
 
 <!-- =====================================================
-     LIVE JOBS TICKER
+     LIVE JOB TICKER
 ===================================================== -->
 
 <div class="jobs-ticker">
@@ -1515,6 +1451,7 @@ body {
 
     <div class="ticker-window">
 
+
         <div
             class="ticker-track"
             id="tickerTrack"
@@ -1522,44 +1459,17 @@ body {
 
             <span class="ticker-loading">
 
-                Loading current jobs...
+                Loading current openings...
 
             </span>
 
         </div>
 
+
     </div>
 
 
 </div>
-
-
-<!-- =====================================================
-     HIDDEN CEIPAL WIDGET
-=====================================================
-
-     CEIPAL's official widget loads here.
-
-     We keep it hidden and use its rendered
-     job information for our custom ticker.
-
-===================================================== -->
-
-<div id="ceipal-widget-source">
-
-    <div id="example-widget-container"></div>
-
-</div>
-
-
-<!-- CEIPAL SCRIPT -->
-
-<script
-    type="text/javascript"
-    src="https://jobsapi.ceipal.com/APISource/widget.js"
-    data-ceipal-api-key="Y2hwbXlURThxbyt6dzMzUVludGZkZz09"
-    data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09">
-</script>
 
 
 <!-- =====================================================
@@ -1573,7 +1483,7 @@ body {
      HEADER
 ===================================================== -->
 
-<div class="header">
+<header class="header">
 
 
     <div class="logo-area">
@@ -1596,18 +1506,14 @@ body {
     </div>
 
 
-    <div class="header-right">
+    <div class="header-badge">
 
-        <div class="header-badge">
-
-            CAREER OPPORTUNITIES
-
-        </div>
+        CAREER OPPORTUNITIES
 
     </div>
 
 
-</div>
+</header>
 
 
 <!-- =====================================================
@@ -1652,7 +1558,9 @@ body {
 </div>
 
 
-<!-- SELECTED JOB -->
+<!-- =====================================================
+     SELECTED JOB
+===================================================== -->
 
 <div
     class="selected-job"
@@ -1661,7 +1569,9 @@ body {
 
     Applying for:
 
-    <span id="selectedJobName"></span>
+    <span
+        id="selectedJobName"
+    ></span>
 
 </div>
 
@@ -1673,11 +1583,31 @@ body {
 <form id="candidateForm">
 
 
+<!-- Hidden CEIPAL fields -->
+
+<input
+    type="hidden"
+    id="ceipalJobId"
+>
+
+
+<input
+    type="hidden"
+    id="jobCode"
+>
+
+
+<input
+    type="hidden"
+    id="ceipalApplyUrl"
+>
+
+
 <div class="form">
 
 
 <!-- =====================================================
-     PERSONAL INFORMATION
+     01 PERSONAL
 ===================================================== -->
 
 <div class="section-heading">
@@ -1701,7 +1631,6 @@ body {
     <input
         type="text"
         id="fullName"
-        name="fullName"
         placeholder="Full name"
         autocomplete="name"
         required
@@ -1724,7 +1653,6 @@ body {
     <input
         type="tel"
         id="phone"
-        name="phone"
         placeholder="+91 98765 43210"
         autocomplete="tel"
         required
@@ -1757,7 +1685,6 @@ body {
     <input
         type="email"
         id="email"
-        name="email"
         placeholder="name@example.com"
         autocomplete="email"
         required
@@ -1790,7 +1717,6 @@ body {
     <input
         type="url"
         id="linkedin"
-        name="linkedin"
         placeholder="https://linkedin.com/in/yourname"
         required
     >
@@ -1809,7 +1735,7 @@ body {
 
 
 <!-- =====================================================
-     PROFESSIONAL INFORMATION
+     02 PROFESSIONAL
 ===================================================== -->
 
 <div class="section-heading">
@@ -1831,7 +1757,6 @@ body {
     <input
         type="date"
         id="lastWorkingDay"
-        name="lastWorkingDay"
     >
 
 </div>
@@ -1851,7 +1776,6 @@ body {
     <input
         type="number"
         id="noticePeriod"
-        name="noticePeriod"
         min="0"
         step="1"
         placeholder="e.g. 30"
@@ -1883,7 +1807,6 @@ body {
     <input
         type="number"
         id="currentCTC"
-        name="currentCTC"
         min="0"
         step="0.1"
         placeholder="e.g. 8.5"
@@ -1904,7 +1827,6 @@ body {
     <input
         type="number"
         id="expectedCTC"
-        name="expectedCTC"
         min="0"
         step="0.1"
         placeholder="e.g. 12"
@@ -1914,7 +1836,7 @@ body {
 
 
 <!-- =====================================================
-     JOB APPLICATION
+     03 JOB
 ===================================================== -->
 
 <div class="section-heading">
@@ -1938,8 +1860,7 @@ body {
     <input
         type="text"
         id="jobApplied"
-        name="jobApplied"
-        placeholder="e.g. Senior Java Developer"
+        placeholder="Click a job above or enter job title"
         required
     >
 
@@ -1962,12 +1883,7 @@ body {
 
         Resume / Portfolio URL
 
-        <span
-            style="
-                color:#888;
-                font-weight:600;
-            "
-        >
+        <span class="optional">
 
             (Optional)
 
@@ -1979,8 +1895,7 @@ body {
     <input
         type="url"
         id="resumePortfolioUrl"
-        name="resumePortfolioUrl"
-        placeholder="https://drive.google.com/... or portfolio URL"
+        placeholder="https://drive.google.com/... "
     >
 
 
@@ -1997,7 +1912,7 @@ body {
 
 
 <!-- =====================================================
-     OPPORTUNITY
+     04 OPPORTUNITY
 ===================================================== -->
 
 <div class="section-heading">
@@ -2077,7 +1992,6 @@ body {
     <input
         type="text"
         id="preferredLocation"
-        name="preferredLocation"
         placeholder="Bangalore, Hyderabad, Remote..."
         required
     >
@@ -2113,7 +2027,6 @@ body {
             rel="noopener noreferrer"
             class="linkedin-button"
         >
-
 
             <svg
                 class="linkedin-icon"
@@ -2187,8 +2100,8 @@ body {
 
     <p>
 
-        Thank you. Your application has been
-        successfully received.
+        Thank you. Your application has
+        been successfully received.
 
     </p>
 
@@ -2220,8 +2133,8 @@ body {
 
     <img
         src="https://iili.io/2QpqFcB.jpg"
-        alt="Love"
         class="credit-heart"
+        alt="Love"
     >
 
     by
@@ -2245,11 +2158,32 @@ body {
 <script>
 
 /* =====================================================
-   GOOGLE APPS SCRIPT
+   CONFIGURATION
 ===================================================== */
 
-const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzUzsh9eyHIAZPmYrNVLWe9YK7gwaY9bnBaiBAtFj4iMcoKpKf6p3_ez64NyxCtrxd2/exec";
+
+/*
+   IMPORTANT:
+
+   Replace this with the WEB APP URL of your
+   CEIPAL -> Google Apps Script.
+
+   Example:
+
+   https://script.google.com/macros/s/XXXXX/exec
+*/
+
+const JOBS_API_URL =
+    "YOUR_CEIPAL_JOBS_GOOGLE_SCRIPT_URL";
+
+
+/*
+   Your existing Candidate Application
+   Google Apps Script URL.
+*/
+
+const APPLICATION_API_URL =
+    "https://script.google.com/macros/s/AKfycbzUzsh9eyHIAZPmYrNVLWe9YK7gwaY9bnBaiBAtFj4iMcoKpKf6p3_ez64NyxCtrxd2/exec";
 
 
 /* =====================================================
@@ -2257,137 +2191,192 @@ const GOOGLE_SCRIPT_URL =
 ===================================================== */
 
 const form =
-document.getElementById(
-    "candidateForm"
-);
-
-
-const formContent =
-document.getElementById(
-    "formContent"
-);
-
-
-const successMessage =
-document.getElementById(
-    "successMessage"
-);
-
-
-const submitButton =
-document.getElementById(
-    "submitBtn"
-);
-
-
-const homeButton =
-document.getElementById(
-    "homeButton"
-);
-
-
-const statusMessage =
-document.getElementById(
-    "status"
-);
+    document.getElementById(
+        "candidateForm"
+    );
 
 
 const tickerTrack =
-document.getElementById(
-    "tickerTrack"
-);
+    document.getElementById(
+        "tickerTrack"
+    );
 
 
 const selectedJob =
-document.getElementById(
-    "selectedJob"
-);
+    document.getElementById(
+        "selectedJob"
+    );
 
 
 const selectedJobName =
-document.getElementById(
-    "selectedJobName"
-);
+    document.getElementById(
+        "selectedJobName"
+    );
+
+
+const submitButton =
+    document.getElementById(
+        "submitBtn"
+    );
+
+
+const formContent =
+    document.getElementById(
+        "formContent"
+    );
+
+
+const successMessage =
+    document.getElementById(
+        "successMessage"
+    );
+
+
+const homeButton =
+    document.getElementById(
+        "homeButton"
+    );
+
+
+const statusMessage =
+    document.getElementById(
+        "status"
+    );
 
 
 /* =====================================================
    INPUTS
 ===================================================== */
 
+const fullName =
+    document.getElementById(
+        "fullName"
+    );
+
+
 const phone =
-document.getElementById(
-    "phone"
-);
+    document.getElementById(
+        "phone"
+    );
 
 
 const email =
-document.getElementById(
-    "email"
-);
+    document.getElementById(
+        "email"
+    );
 
 
 const linkedin =
-document.getElementById(
-    "linkedin"
-);
+    document.getElementById(
+        "linkedin"
+    );
+
+
+const lastWorkingDay =
+    document.getElementById(
+        "lastWorkingDay"
+    );
 
 
 const noticePeriod =
-document.getElementById(
-    "noticePeriod"
-);
+    document.getElementById(
+        "noticePeriod"
+    );
+
+
+const currentCTC =
+    document.getElementById(
+        "currentCTC"
+    );
+
+
+const expectedCTC =
+    document.getElementById(
+        "expectedCTC"
+    );
 
 
 const jobApplied =
-document.getElementById(
-    "jobApplied"
-);
+    document.getElementById(
+        "jobApplied"
+    );
 
 
 const resumePortfolioUrl =
-document.getElementById(
-    "resumePortfolioUrl"
-);
+    document.getElementById(
+        "resumePortfolioUrl"
+    );
+
+
+const preferredLocation =
+    document.getElementById(
+        "preferredLocation"
+    );
+
+
+const ceipalJobId =
+    document.getElementById(
+        "ceipalJobId"
+    );
+
+
+const jobCode =
+    document.getElementById(
+        "jobCode"
+    );
+
+
+const ceipalApplyUrl =
+    document.getElementById(
+        "ceipalApplyUrl"
+    );
 
 
 /* =====================================================
-   ERRORS
+   ERROR ELEMENTS
 ===================================================== */
 
 const phoneError =
-document.getElementById(
-    "phoneError"
-);
+    document.getElementById(
+        "phoneError"
+    );
 
 
 const emailError =
-document.getElementById(
-    "emailError"
-);
+    document.getElementById(
+        "emailError"
+    );
 
 
 const linkedinError =
-document.getElementById(
-    "linkedinError"
-);
+    document.getElementById(
+        "linkedinError"
+    );
 
 
 const noticeError =
-document.getElementById(
-    "noticeError"
-);
+    document.getElementById(
+        "noticeError"
+    );
 
 
 const jobAppliedError =
-document.getElementById(
-    "jobAppliedError"
-);
+    document.getElementById(
+        "jobAppliedError"
+    );
 
 
 const resumeUrlError =
-document.getElementById(
-    "resumeUrlError"
-);
+    document.getElementById(
+        "resumeUrlError"
+    );
+
+
+/* =====================================================
+   JOB STORAGE
+===================================================== */
+
+let liveJobs = [];
 
 
 /* =====================================================
@@ -2397,7 +2386,10 @@ document.getElementById(
 function validateEmail(value) {
 
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
-        .test(value);
+        .test(
+            value
+        );
+
 }
 
 
@@ -2409,7 +2401,12 @@ function validatePhone(value) {
             ""
         );
 
-    return digits.length >= 10;
+
+    return (
+        digits.length >= 10 &&
+        digits.length <= 15
+    );
+
 }
 
 
@@ -2419,6 +2416,7 @@ function validateLinkedIn(value) {
         .test(
             value.trim()
         );
+
 }
 
 
@@ -2430,6 +2428,7 @@ function validateURL(value) {
             new URL(
                 value.trim()
             );
+
 
         return (
             url.protocol === "http:" ||
@@ -2443,6 +2442,7 @@ function validateURL(value) {
         return false;
 
     }
+
 }
 
 
@@ -2465,14 +2465,15 @@ function validateNotice(value) {
         Number.isInteger(number) &&
         number >= 0
     );
+
 }
 
 
 /* =====================================================
-   ERROR HELPERS
+   ERROR FUNCTIONS
 ===================================================== */
 
-function showFieldError(
+function showError(
     input,
     error
 ) {
@@ -2481,13 +2482,15 @@ function showFieldError(
         "invalid"
     );
 
+
     error.classList.add(
         "show"
     );
+
 }
 
 
-function hideFieldError(
+function hideError(
     input,
     error
 ) {
@@ -2496,274 +2499,10 @@ function hideFieldError(
         "invalid"
     );
 
+
     error.classList.remove(
         "show"
     );
-}
-
-
-/* =====================================================
-   LIVE VALIDATION
-===================================================== */
-
-email.addEventListener(
-    "input",
-    () => {
-
-        if (
-            email.value === "" ||
-            validateEmail(
-                email.value.trim()
-            )
-        ) {
-
-            hideFieldError(
-                email,
-                emailError
-            );
-
-        }
-
-    }
-);
-
-
-linkedin.addEventListener(
-    "input",
-    () => {
-
-        if (
-            linkedin.value !== "" &&
-            validateLinkedIn(
-                linkedin.value.trim()
-            )
-        ) {
-
-            hideFieldError(
-                linkedin,
-                linkedinError
-            );
-
-        }
-
-    }
-);
-
-
-noticePeriod.addEventListener(
-    "input",
-    () => {
-
-        if (
-            validateNotice(
-                noticePeriod.value
-            )
-        ) {
-
-            hideFieldError(
-                noticePeriod,
-                noticeError
-            );
-
-        }
-
-    }
-);
-
-
-jobApplied.addEventListener(
-    "input",
-    () => {
-
-        if (
-            jobApplied.value.trim() !== ""
-        ) {
-
-            hideFieldError(
-                jobApplied,
-                jobAppliedError
-            );
-
-        }
-
-    }
-);
-
-
-resumePortfolioUrl.addEventListener(
-    "input",
-    () => {
-
-        const value =
-            resumePortfolioUrl.value.trim();
-
-
-        if (
-            value === "" ||
-            validateURL(value)
-        ) {
-
-            hideFieldError(
-                resumePortfolioUrl,
-                resumeUrlError
-            );
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   SELECT JOB
-===================================================== */
-
-function selectJob(
-    jobTitle
-) {
-
-    jobTitle =
-        String(jobTitle)
-        .trim();
-
-
-    if (
-        !jobTitle
-    ) {
-
-        return;
-
-    }
-
-
-    /*
-       Put selected job into
-       mandatory input.
-    */
-
-    jobApplied.value =
-        jobTitle;
-
-
-    selectedJobName.textContent =
-        jobTitle;
-
-
-    selectedJob.classList.add(
-        "show"
-    );
-
-
-    /*
-       Highlight selected input.
-    */
-
-    jobApplied.focus();
-
-
-    jobApplied.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
-}
-
-
-/* =====================================================
-   CREATE TICKER
-===================================================== */
-
-function createTickerJobs(
-    jobs
-) {
-
-    if (
-        !jobs ||
-        !jobs.length
-    ) {
-
-        tickerTrack.innerHTML = `
-
-            <span class="ticker-empty">
-
-                No current job openings available.
-
-            </span>
-
-        `;
-
-        return;
-
-    }
-
-
-    const firstSet =
-        jobs
-        .map(
-            function(job) {
-
-                return `
-
-                    <button
-                        type="button"
-                        class="ticker-item"
-                        data-job-title="${escapeHTML(job.title)}"
-                        title="Apply for ${escapeHTML(job.title)}"
-                    >
-
-                        <span class="ticker-dot"></span>
-
-                        ${escapeHTML(job.title)}
-
-                        ${job.location
-                            ? " — " +
-                              escapeHTML(job.location)
-                            : ""
-                        }
-
-                    </button>
-
-                `;
-
-            }
-        )
-        .join("");
-
-
-    /*
-       Duplicate jobs to create
-       continuous scrolling.
-    */
-
-    tickerTrack.innerHTML =
-        firstSet +
-        firstSet;
-
-
-    /*
-       Add click events.
-    */
-
-    tickerTrack
-        .querySelectorAll(
-            ".ticker-item"
-        )
-        .forEach(
-            function(button) {
-
-                button.addEventListener(
-                    "click",
-                    function() {
-
-                        selectJob(
-                            button.dataset.jobTitle
-                        );
-
-                    }
-                );
-
-            }
-        );
 
 }
 
@@ -2772,9 +2511,7 @@ function createTickerJobs(
    HTML ESCAPE
 ===================================================== */
 
-function escapeHTML(
-    value
-) {
+function escapeHTML(value) {
 
     return String(value)
         .replace(
@@ -2802,281 +2539,469 @@ function escapeHTML(
 
 
 /* =====================================================
-   READ CEIPAL WIDGET
+   LOAD LIVE CEIPAL JOBS
 ===================================================== */
 
-function readCEIPALJobs() {
-
-    /*
-       The CEIPAL widget can render its own
-       career portal markup.
-
-       We inspect the rendered DOM after
-       CEIPAL has loaded.
-    */
-
-    const widget =
-        document.getElementById(
-            "ceipal-widget-source"
-        );
-
+async function loadLiveJobs() {
 
     if (
-        !widget
+        !JOBS_API_URL ||
+        JOBS_API_URL ===
+        "YOUR_CEIPAL_JOBS_GOOGLE_SCRIPT_URL"
     ) {
 
-        return [];
+        tickerTrack.innerHTML = `
 
-    }
+            <span class="ticker-error">
 
+                Jobs API URL is not configured.
 
-    const results = [];
+            </span>
 
-
-    /*
-       Look for links/buttons commonly
-       generated by career widgets.
-    */
-
-    const elements =
-        widget.querySelectorAll(
-            "a, button"
-        );
-
-
-    elements.forEach(
-        function(element) {
-
-            const text =
-                element.innerText
-                    .trim();
-
-
-            if (
-                !text ||
-                text.length < 3
-            ) {
-
-                return;
-
-            }
-
-
-            /*
-               Ignore generic CEIPAL controls.
-            */
-
-            const lower =
-                text.toLowerCase();
-
-
-            const ignored = [
-
-                "search",
-                "apply",
-                "login",
-                "sign in",
-                "register",
-                "next",
-                "previous",
-                "filter",
-                "clear",
-                "submit",
-                "view more",
-                "read more"
-
-            ];
-
-
-            if (
-                ignored.includes(
-                    lower
-                )
-            ) {
-
-                return;
-
-            }
-
-
-            /*
-               Only use reasonably short
-               text as a possible job title.
-            */
-
-            if (
-                text.length > 180
-            ) {
-
-                return;
-
-            }
-
-
-            /*
-               Prevent duplicates.
-            */
-
-            const exists =
-                results.some(
-                    function(job) {
-
-                        return (
-                            job.title === text
-                        );
-
-                    }
-                );
-
-
-            if (
-                !exists
-            ) {
-
-                results.push({
-
-                    title: text,
-
-                    location: ""
-
-                });
-
-            }
-
-        }
-    );
-
-
-    return results;
-
-}
-
-
-/* =====================================================
-   LOAD CEIPAL JOBS
-===================================================== */
-
-let ceipalAttempts = 0;
-
-
-function loadCEIPALJobs() {
-
-    ceipalAttempts++;
-
-
-    const jobs =
-        readCEIPALJobs();
-
-
-    if (
-        jobs.length > 0
-    ) {
-
-        /*
-           Remove obvious non-job text
-           and use the first 20 results.
-        */
-
-        const cleanJobs =
-            jobs
-            .filter(
-                function(job) {
-
-                    const title =
-                        job.title
-                            .toLowerCase();
-
-
-                    return (
-                        !title.includes(
-                            "career"
-                        ) &&
-                        !title.includes(
-                            "current opening"
-                        ) &&
-                        !title.includes(
-                            "job search"
-                        ) &&
-                        !title.includes(
-                            "job title"
-                        )
-                    );
-
-                }
-            )
-            .slice(
-                0,
-                20
-            );
-
-
-        createTickerJobs(
-            cleanJobs
-        );
-
+        `;
 
         return;
 
     }
 
-
-    /*
-       CEIPAL may load asynchronously,
-       so try again.
-    */
-
-    if (
-        ceipalAttempts < 20
-    ) {
-
-        setTimeout(
-            loadCEIPALJobs,
-            1000
-        );
-
-        return;
-
-    }
-
-
-    /*
-       If the widget cannot be read,
-       show a clear message.
-    */
 
     tickerTrack.innerHTML = `
 
-        <span class="ticker-empty">
+        <span class="ticker-loading">
 
-            Unable to load current jobs.
-            Please refresh the page.
+            Loading live jobs from CEIPAL...
 
         </span>
 
     `;
 
+
+    try {
+
+        const response =
+            await fetch(
+                JOBS_API_URL +
+                "?t=" +
+                Date.now(),
+                {
+                    method: "GET",
+
+                    cache: "no-store"
+                }
+            );
+
+
+        if (
+            !response.ok
+        ) {
+
+            throw new Error(
+                "HTTP " +
+                response.status
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        console.log(
+            "CEIPAL Jobs:",
+            data
+        );
+
+
+        if (
+            !data.success
+        ) {
+
+            throw new Error(
+                data.error ||
+                "Unable to retrieve jobs"
+            );
+
+        }
+
+
+        liveJobs =
+            Array.isArray(
+                data.jobs
+            )
+                ? data.jobs
+                : [];
+
+
+        if (
+            liveJobs.length === 0
+        ) {
+
+            tickerTrack.innerHTML = `
+
+                <span class="ticker-empty">
+
+                    No live job openings available.
+
+                </span>
+
+            `;
+
+            return;
+
+        }
+
+
+        renderTicker(
+            liveJobs
+        );
+
+    }
+
+
+    catch (
+        error
+    ) {
+
+        console.error(
+            "CEIPAL Jobs Error:",
+            error
+        );
+
+
+        tickerTrack.innerHTML = `
+
+            <span class="ticker-error">
+
+                Unable to load jobs. Please refresh.
+
+            </span>
+
+        `;
+
+    }
+
 }
 
 
 /* =====================================================
-   START CEIPAL LOADING
+   RENDER TICKER
 ===================================================== */
 
-window.addEventListener(
-    "load",
+function renderTicker(jobs) {
+
+    const makeJob =
+        function(job) {
+
+            const location =
+                job.location
+                    ? " — " +
+                      escapeHTML(
+                          job.location
+                      )
+                    : "";
+
+
+            return `
+
+                <button
+                    type="button"
+                    class="ticker-item"
+                    data-job-id="${escapeHTML(job.id)}"
+                    title="Apply for ${escapeHTML(job.title)}"
+                >
+
+                    <span
+                        class="ticker-dot"
+                    ></span>
+
+                    <span>
+
+                        ${escapeHTML(job.title)}
+
+                        ${location}
+
+                    </span>
+
+                </button>
+
+            `;
+
+        };
+
+
+    const html =
+        jobs
+        .map(
+            makeJob
+        )
+        .join("");
+
+
+    /*
+       Duplicate for continuous ticker.
+    */
+
+    tickerTrack.innerHTML =
+        html +
+        html;
+
+
+    tickerTrack
+        .querySelectorAll(
+            ".ticker-item"
+        )
+        .forEach(
+            function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        const jobId =
+                            button.dataset.jobId;
+
+
+                        const job =
+                            liveJobs.find(
+                                function(item) {
+
+                                    return String(
+                                        item.id
+                                    ) === String(
+                                        jobId
+                                    );
+
+                                }
+                            );
+
+
+                        if (
+                            job
+                        ) {
+
+                            selectJob(
+                                job
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   SELECT JOB
+===================================================== */
+
+function selectJob(job) {
+
+    if (
+        !job
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+       Automatically fill Job Applied.
+    */
+
+    jobApplied.value =
+        job.title || "";
+
+
+    /*
+       Save CEIPAL information.
+    */
+
+    ceipalJobId.value =
+        job.id || "";
+
+
+    jobCode.value =
+        job.jobCode || "";
+
+
+    ceipalApplyUrl.value =
+        job.applyUrl || "";
+
+
+    /*
+       Display selected job.
+    */
+
+    selectedJobName.textContent =
+        job.title || "";
+
+
+    selectedJob.classList.add(
+        "show"
+    );
+
+
+    hideError(
+        jobApplied,
+        jobAppliedError
+    );
+
+
+    /*
+       Bring selected job field
+       into view.
+    */
+
+    jobApplied.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
+
+}
+
+
+/* =====================================================
+   LIVE VALIDATION
+===================================================== */
+
+email.addEventListener(
+    "input",
     function() {
 
-        setTimeout(
-            loadCEIPALJobs,
-            1500
-        );
+        if (
+            validateEmail(
+                email.value.trim()
+            )
+        ) {
+
+            hideError(
+                email,
+                emailError
+            );
+
+        }
+
+    }
+);
+
+
+phone.addEventListener(
+    "input",
+    function() {
+
+        if (
+            validatePhone(
+                phone.value
+            )
+        ) {
+
+            hideError(
+                phone,
+                phoneError
+            );
+
+        }
+
+    }
+);
+
+
+linkedin.addEventListener(
+    "input",
+    function() {
+
+        if (
+            validateLinkedIn(
+                linkedin.value
+            )
+        ) {
+
+            hideError(
+                linkedin,
+                linkedinError
+            );
+
+        }
+
+    }
+);
+
+
+noticePeriod.addEventListener(
+    "input",
+    function() {
+
+        if (
+            validateNotice(
+                noticePeriod.value
+            )
+        ) {
+
+            hideError(
+                noticePeriod,
+                noticeError
+            );
+
+        }
+
+    }
+);
+
+
+jobApplied.addEventListener(
+    "input",
+    function() {
+
+        if (
+            jobApplied.value.trim()
+        ) {
+
+            hideError(
+                jobApplied,
+                jobAppliedError
+            );
+
+        }
+
+    }
+);
+
+
+resumePortfolioUrl.addEventListener(
+    "input",
+    function() {
+
+        const value =
+            resumePortfolioUrl.value.trim();
+
+
+        if (
+            value === "" ||
+            validateURL(value)
+        ) {
+
+            hideError(
+                resumePortfolioUrl,
+                resumeUrlError
+            );
+
+        }
 
     }
 );
 
 
 /* =====================================================
-   FORM SUBMISSION
+   SUBMIT APPLICATION
 ===================================================== */
 
 form.addEventListener(
@@ -3100,13 +3025,15 @@ form.addEventListener(
         }
 
 
+        /* PHONE */
+
         if (
             !validatePhone(
-                phone.value.trim()
+                phone.value
             )
         ) {
 
-            showFieldError(
+            showError(
                 phone,
                 phoneError
             );
@@ -3118,13 +3045,15 @@ form.addEventListener(
         }
 
 
+        /* EMAIL */
+
         if (
             !validateEmail(
                 email.value.trim()
             )
         ) {
 
-            showFieldError(
+            showError(
                 email,
                 emailError
             );
@@ -3136,13 +3065,15 @@ form.addEventListener(
         }
 
 
+        /* LINKEDIN */
+
         if (
             !validateLinkedIn(
                 linkedin.value.trim()
             )
         ) {
 
-            showFieldError(
+            showError(
                 linkedin,
                 linkedinError
             );
@@ -3154,13 +3085,15 @@ form.addEventListener(
         }
 
 
+        /* NOTICE */
+
         if (
             !validateNotice(
                 noticePeriod.value
             )
         ) {
 
-            showFieldError(
+            showError(
                 noticePeriod,
                 noticeError
             );
@@ -3172,11 +3105,13 @@ form.addEventListener(
         }
 
 
+        /* JOB */
+
         if (
-            jobApplied.value.trim() === ""
+            !jobApplied.value.trim()
         ) {
 
-            showFieldError(
+            showError(
                 jobApplied,
                 jobAppliedError
             );
@@ -3188,18 +3123,16 @@ form.addEventListener(
         }
 
 
-        const resumeURL =
-            resumePortfolioUrl.value.trim();
-
+        /* RESUME / PORTFOLIO */
 
         if (
-            resumeURL !== "" &&
+            resumePortfolioUrl.value.trim() !== "" &&
             !validateURL(
-                resumeURL
+                resumePortfolioUrl.value.trim()
             )
         ) {
 
-            showFieldError(
+            showError(
                 resumePortfolioUrl,
                 resumeUrlError
             );
@@ -3215,72 +3148,41 @@ form.addEventListener(
             true;
 
 
-        submitButton.innerHTML =
+        submitButton.textContent =
             "Submitting...";
 
 
         /*
-           Data sent to Google Apps Script.
+           IMPORTANT:
+           Only the requested Google Sheet
+           columns are sent.
         */
 
-        const formData = {
+        const data = {
 
             fullName:
-                document
-                .getElementById(
-                    "fullName"
-                )
-                .value
-                .trim(),
-
+                fullName.value.trim(),
 
             phone:
                 phone.value.trim(),
 
-
             email:
                 email.value.trim(),
-
 
             linkedin:
                 linkedin.value.trim(),
 
-
             lastWorkingDay:
-                document
-                .getElementById(
-                    "lastWorkingDay"
-                )
-                .value,
-
+                lastWorkingDay.value,
 
             noticePeriod:
                 noticePeriod.value,
 
-
             currentCTC:
-                document
-                .getElementById(
-                    "currentCTC"
-                )
-                .value,
-
+                currentCTC.value,
 
             expectedCTC:
-                document
-                .getElementById(
-                    "expectedCTC"
-                )
-                .value,
-
-
-            jobApplied:
-                jobApplied.value.trim(),
-
-
-            resumePortfolioUrl:
-                resumeURL,
-
+                expectedCTC.value,
 
             opportunity:
                 document
@@ -3289,14 +3191,14 @@ form.addEventListener(
                 )
                 .value,
 
-
             preferredLocation:
-                document
-                .getElementById(
-                    "preferredLocation"
-                )
-                .value
-                .trim()
+                preferredLocation.value.trim(),
+
+            jobApplied:
+                jobApplied.value.trim(),
+
+            resumePortfolioUrl:
+                resumePortfolioUrl.value.trim()
 
         };
 
@@ -3304,7 +3206,7 @@ form.addEventListener(
         try {
 
             await fetch(
-                GOOGLE_SCRIPT_URL,
+                APPLICATION_API_URL,
                 {
 
                     method: "POST",
@@ -3320,7 +3222,7 @@ form.addEventListener(
 
                     body:
                         JSON.stringify(
-                            formData
+                            data
                         )
 
                 }
@@ -3337,6 +3239,7 @@ form.addEventListener(
         ) {
 
             console.error(
+                "Application error:",
                 error
             );
 
@@ -3345,7 +3248,7 @@ form.addEventListener(
                 false;
 
 
-            submitButton.innerHTML =
+            submitButton.textContent =
                 "Submit Application →";
 
 
@@ -3376,7 +3279,7 @@ function showSuccess() {
 
 
 /* =====================================================
-   BACK BUTTON
+   BACK TO APPLICATION
 ===================================================== */
 
 homeButton.addEventListener(
@@ -3386,12 +3289,16 @@ homeButton.addEventListener(
         form.reset();
 
 
-        submitButton.disabled =
-            false;
+        ceipalJobId.value =
+            "";
 
 
-        submitButton.innerHTML =
-            "Submit Application →";
+        jobCode.value =
+            "";
+
+
+        ceipalApplyUrl.value =
+            "";
 
 
         selectedJob.classList.remove(
@@ -3441,6 +3348,14 @@ homeButton.addEventListener(
         );
 
 
+        submitButton.disabled =
+            false;
+
+
+        submitButton.textContent =
+            "Submit Application →";
+
+
         hideStatus();
 
 
@@ -3459,9 +3374,7 @@ homeButton.addEventListener(
    STATUS
 ===================================================== */
 
-function showStatus(
-    message
-) {
+function showStatus(message) {
 
     statusMessage.textContent =
         message;
@@ -3491,6 +3404,23 @@ function hideStatus() {
         "none";
 
 }
+
+
+/* =====================================================
+   INITIAL JOB LOAD
+===================================================== */
+
+loadLiveJobs();
+
+
+/*
+   Refresh CEIPAL jobs every 5 minutes.
+*/
+
+setInterval(
+    loadLiveJobs,
+    5 * 60 * 1000
+);
 
 </script>
 
