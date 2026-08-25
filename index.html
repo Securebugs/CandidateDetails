@@ -28,13 +28,16 @@
 
 html,
 body {
+
     width: 100%;
     height: 100%;
+
     overflow: hidden;
 }
 
 
 body {
+
     font-family:
         Arial,
         Helvetica,
@@ -42,29 +45,25 @@ body {
 
     background: #f3f3f3;
 
-    color: #111111;
+    color: #111;
 }
 
 
 /* =====================================================
-   MAIN PAGE
+   PAGE
 ===================================================== */
 
 .page {
 
     width: 100%;
-
     height: 100vh;
 
     display: flex;
-
     flex-direction: column;
 
     overflow: hidden;
 
-    padding:
-        7px
-        10px;
+    padding: 7px 10px;
 }
 
 
@@ -75,22 +74,19 @@ body {
 .jobs-ticker {
 
     width: 100%;
-
     height: 32px;
 
     flex-shrink: 0;
 
-    background: #111111;
+    background: #111;
 
-    color: #ffffff;
+    color: #fff;
 
-    border:
-        1px solid #111111;
+    border: 1px solid #111;
 
     border-radius: 6px;
 
     display: flex;
-
     align-items: center;
 
     overflow: hidden;
@@ -105,18 +101,15 @@ body {
 
     min-width: 115px;
 
-    padding:
-        0
-        12px;
+    padding: 0 12px;
 
     background: #ffd400;
 
-    color: #111111;
+    color: #111;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     font-size: 9px;
@@ -125,7 +118,7 @@ body {
 
     letter-spacing: .4px;
 
-    z-index: 2;
+    z-index: 3;
 }
 
 
@@ -139,11 +132,11 @@ body {
 
     white-space: nowrap;
 
-    position: relative;
-
     display: flex;
 
     align-items: center;
+
+    position: relative;
 }
 
 
@@ -158,13 +151,27 @@ body {
     white-space: nowrap;
 
     animation:
-        tickerMove 28s linear infinite;
+        tickerMove 30s linear infinite;
 
     padding-left: 25px;
 }
 
 
+.ticker-track:hover {
+
+    animation-play-state: paused;
+}
+
+
 .ticker-item {
+
+    border: none;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-family: inherit;
 
     font-size: 10px;
 
@@ -175,13 +182,26 @@ body {
     align-items: center;
 
     gap: 7px;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    white-space: nowrap;
+
+    transition: color .2s;
+}
+
+
+.ticker-item:hover {
+
+    color: #ffd400;
 }
 
 
 .ticker-dot {
 
     width: 6px;
-
     height: 6px;
 
     flex-shrink: 0;
@@ -191,6 +211,26 @@ body {
     border-radius: 50%;
 
     display: inline-block;
+}
+
+
+.ticker-loading {
+
+    font-size: 10px;
+
+    color: #ccc;
+
+    padding-left: 20px;
+}
+
+
+.ticker-empty {
+
+    font-size: 10px;
+
+    color: #ccc;
+
+    padding-left: 20px;
 }
 
 
@@ -208,6 +248,30 @@ body {
 
 
 /* =====================================================
+   HIDDEN CEIPAL WIDGET
+===================================================== */
+
+#ceipal-widget-source {
+
+    position: fixed;
+
+    left: -10000px;
+
+    top: -10000px;
+
+    width: 1px;
+
+    height: 1px;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
    APPLICATION CARD
 ===================================================== */
 
@@ -221,19 +285,15 @@ body {
 
     min-height: 0;
 
-    margin:
-        0
-        auto;
+    margin: 0 auto;
 
-    background: #ffffff;
+    background: #fff;
 
-    border:
-        2px solid #111111;
+    border: 2px solid #111;
 
     border-radius: 13px;
 
-    box-shadow:
-        6px 6px 0 #111111;
+    box-shadow: 6px 6px 0 #111;
 
     overflow: hidden;
 
@@ -257,11 +317,9 @@ body {
 
     background: #ffd400;
 
-    color: #111111;
+    color: #111;
 
-    padding:
-        7px
-        25px;
+    padding: 7px 25px;
 
     display: flex;
 
@@ -271,8 +329,7 @@ body {
 
     gap: 15px;
 
-    border-bottom:
-        2px solid #111111;
+    border-bottom: 2px solid #111;
 }
 
 
@@ -326,13 +383,11 @@ body {
 
 .header-badge {
 
-    background: #111111;
+    background: #111;
 
     color: #ffd400;
 
-    padding:
-        7px
-        11px;
+    padding: 7px 11px;
 
     border-radius: 5px;
 
@@ -345,7 +400,7 @@ body {
 
 
 /* =====================================================
-   FORM CONTENT
+   CONTENT
 ===================================================== */
 
 .content {
@@ -354,10 +409,7 @@ body {
 
     min-height: 0;
 
-    padding:
-        11px
-        28px
-        12px;
+    padding: 11px 28px 12px;
 
     display: flex;
 
@@ -413,7 +465,7 @@ body {
 
 .required-note {
 
-    color: #777777;
+    color: #777;
 
     font-size: 9px;
 
@@ -422,7 +474,7 @@ body {
 
 
 /* =====================================================
-   FORM GRID
+   FORM
 ===================================================== */
 
 .form {
@@ -443,18 +495,13 @@ body {
 }
 
 
-/* =====================================================
-   SECTION HEADINGS
-===================================================== */
-
 .section-heading {
 
     grid-column: 1 / -1;
 
     padding-bottom: 4px;
 
-    border-bottom:
-        2px solid #111111;
+    border-bottom: 2px solid #111;
 
     margin-top: 1px;
 
@@ -467,10 +514,6 @@ body {
     text-transform: uppercase;
 }
 
-
-/* =====================================================
-   FORM GROUP
-===================================================== */
 
 .form-group {
 
@@ -490,7 +533,7 @@ body {
 
     font-weight: 800;
 
-    color: #222222;
+    color: #222;
 
     white-space: nowrap;
 
@@ -516,38 +559,31 @@ body {
 
     height: 39px;
 
-    border:
-        1px solid #cccccc;
+    border: 1px solid #ccc;
 
     border-radius: 6px;
 
     background: #fafafa;
 
-    padding:
-        0
-        10px;
+    padding: 0 10px;
 
     font-family: inherit;
 
     font-size: 12px;
 
-    color: #111111;
+    color: #111;
 
     outline: none;
 
-    transition:
-        border .2s,
-        box-shadow .2s,
-        background .2s;
+    transition: .2s;
 }
 
 
 .form-group input:focus {
 
-    border:
-        2px solid #111111;
+    border: 2px solid #111;
 
-    background: #ffffff;
+    background: #fff;
 
     box-shadow:
         0 0 0 3px
@@ -560,30 +596,13 @@ body {
 }
 
 
-.form-group input::placeholder {
-
-    color: #999999;
-}
-
-
-/* =====================================================
-   INVALID INPUT
-===================================================== */
-
 .form-group input.invalid {
 
-    border:
-        2px solid #d00000;
+    border: 2px solid #d00000;
 
     background: #fff7f7;
-
-    box-shadow: none;
 }
 
-
-/* =====================================================
-   FIELD ERROR
-===================================================== */
 
 .field-error {
 
@@ -602,6 +621,22 @@ body {
 .field-error.show {
 
     display: block;
+}
+
+
+/* =====================================================
+   JOB APPLIED / RESUME
+===================================================== */
+
+.job-applied {
+
+    grid-column: span 2;
+}
+
+
+.resume-url {
+
+    grid-column: span 2;
 }
 
 
@@ -634,8 +669,6 @@ body {
 .radio {
 
     position: relative;
-
-    min-width: 0;
 }
 
 
@@ -663,8 +696,7 @@ body {
 
     text-align: center;
 
-    border:
-        1px solid #cccccc;
+    border: 1px solid #ccc;
 
     border-radius: 6px;
 
@@ -686,8 +718,7 @@ body {
 
     background: #ffd400;
 
-    border:
-        2px solid #111111;
+    border: 2px solid #111;
 }
 
 
@@ -698,6 +729,42 @@ body {
 .location {
 
     grid-column: span 2;
+}
+
+
+/* =====================================================
+   SELECTED JOB INDICATOR
+===================================================== */
+
+.selected-job {
+
+    display: none;
+
+    margin-bottom: 8px;
+
+    padding: 6px 9px;
+
+    background: #fff8cc;
+
+    border: 1px solid #e4c000;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.selected-job.show {
+
+    display: block;
+}
+
+
+.selected-job span {
+
+    font-weight: 900;
 }
 
 
@@ -713,8 +780,7 @@ body {
 
     padding-top: 10px;
 
-    border-top:
-        1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
 
     display: flex;
 
@@ -742,7 +808,7 @@ body {
 
     max-width: 350px;
 
-    color: #888888;
+    color: #888;
 
     font-size: 8px;
 
@@ -751,16 +817,14 @@ body {
 
 
 /* =====================================================
-   LINKEDIN BUTTON
+   LINKEDIN
 ===================================================== */
 
 .linkedin-button {
 
     height: 33px;
 
-    padding:
-        0
-        11px;
+    padding: 0 11px;
 
     display: inline-flex;
 
@@ -770,12 +834,11 @@ body {
 
     gap: 7px;
 
-    background: #111111;
+    background: #111;
 
-    color: #ffffff;
+    color: #fff;
 
-    border:
-        1px solid #111111;
+    border: 1px solid #111;
 
     border-radius: 5px;
 
@@ -795,7 +858,7 @@ body {
 
     background: #ffd400;
 
-    color: #111111;
+    color: #111;
 }
 
 
@@ -810,7 +873,7 @@ body {
 
 
 /* =====================================================
-   SUBMIT BUTTON
+   SUBMIT
 ===================================================== */
 
 .submit-btn {
@@ -819,18 +882,15 @@ body {
 
     min-width: 175px;
 
-    padding:
-        0
-        17px;
+    padding: 0 17px;
 
-    border:
-        2px solid #111111;
+    border: 2px solid #111;
 
     border-radius: 6px;
 
     background: #ffd400;
 
-    color: #111111;
+    color: #111;
 
     font-size: 11px;
 
@@ -844,7 +904,7 @@ body {
 
 .submit-btn:hover {
 
-    background: #111111;
+    background: #111;
 
     color: #ffd400;
 }
@@ -868,9 +928,7 @@ body {
 
     margin-top: 6px;
 
-    padding:
-        6px
-        10px;
+    padding: 6px 10px;
 
     border-radius: 5px;
 
@@ -890,13 +948,12 @@ body {
 
     color: #b00000;
 
-    border:
-        1px solid #ffb5b5;
+    border: 1px solid #ffb5b5;
 }
 
 
 /* =====================================================
-   SUCCESS SCREEN
+   SUCCESS
 ===================================================== */
 
 .success {
@@ -905,9 +962,7 @@ body {
 
     text-align: center;
 
-    padding:
-        40px
-        20px;
+    padding: 40px 20px;
 }
 
 
@@ -917,15 +972,11 @@ body {
 
     height: 58px;
 
-    margin:
-        0
-        auto
-        14px;
+    margin: 0 auto 14px;
 
     background: #ffd400;
 
-    border:
-        2px solid #111111;
+    border: 2px solid #111;
 
     border-radius: 50%;
 
@@ -951,7 +1002,7 @@ body {
 
 .success p {
 
-    color: #777777;
+    color: #777;
 
     font-size: 12px;
 
@@ -959,26 +1010,19 @@ body {
 }
 
 
-/* =====================================================
-   HOME BUTTON
-===================================================== */
-
 .home-btn {
 
     height: 40px;
 
     min-width: 150px;
 
-    padding:
-        0
-        18px;
+    padding: 0 18px;
 
-    background: #111111;
+    background: #111;
 
-    color: #ffffff;
+    color: #fff;
 
-    border:
-        2px solid #111111;
+    border: 2px solid #111;
 
     border-radius: 6px;
 
@@ -996,7 +1040,7 @@ body {
 
     background: #ffd400;
 
-    color: #111111;
+    color: #111;
 }
 
 
@@ -1010,11 +1054,11 @@ body {
 
     text-align: center;
 
-    color: #777777;
+    color: #777;
 
     font-size: 8px;
 
-    margin-top: 6px;
+    margin-top: 4px;
 
     line-height: 12px;
 }
@@ -1022,17 +1066,11 @@ body {
 
 .credit a {
 
-    color: #111111;
+    color: #111;
 
     font-weight: 800;
 
     text-decoration: none;
-}
-
-
-.credit a:hover {
-
-    text-decoration: underline;
 }
 
 
@@ -1048,9 +1086,7 @@ body {
 
     border-radius: 2px;
 
-    margin:
-        0
-        2px;
+    margin: 0 2px;
 }
 
 
@@ -1063,16 +1099,14 @@ body {
     .page {
 
         padding:
-            5px
-            7px;
+            5px 7px;
     }
 
 
     .header {
 
         padding:
-            7px
-            17px;
+            7px 17px;
     }
 
 
@@ -1091,9 +1125,7 @@ body {
     .content {
 
         padding:
-            9px
-            17px
-            10px;
+            9px 17px 10px;
     }
 
 
@@ -1115,16 +1147,12 @@ body {
     }
 
 
+    .job-applied,
+    .resume-url,
     .opportunity,
     .location {
 
         grid-column: span 1;
-    }
-
-
-    .privacy {
-
-        max-width: 240px;
     }
 
 }
@@ -1139,8 +1167,7 @@ body {
     .page {
 
         padding:
-            3px
-            4px;
+            3px 4px;
     }
 
 
@@ -1156,9 +1183,7 @@ body {
 
         min-width: 74px;
 
-        padding:
-            0
-            6px;
+        padding: 0 6px;
 
         font-size: 7px;
     }
@@ -1181,7 +1206,7 @@ body {
         border-radius: 9px;
 
         box-shadow:
-            3px 3px 0 #111111;
+            3px 3px 0 #111;
     }
 
 
@@ -1190,10 +1215,7 @@ body {
         min-height: 45px;
 
         padding:
-            5px
-            9px;
-
-        gap: 7px;
+            5px 9px;
     }
 
 
@@ -1218,8 +1240,7 @@ body {
     .header-badge {
 
         padding:
-            5px
-            6px;
+            5px 6px;
 
         font-size: 6px;
     }
@@ -1228,9 +1249,7 @@ body {
     .content {
 
         padding:
-            7px
-            9px
-            8px;
+            7px 9px 8px;
     }
 
 
@@ -1291,8 +1310,7 @@ body {
         height: 31px;
 
         padding:
-            0
-            6px;
+            0 6px;
 
         font-size: 9px;
 
@@ -1300,17 +1318,14 @@ body {
     }
 
 
-    .radio-container {
+    .radio-container,
+    .radio label {
 
         height: 31px;
-
-        gap: 4px;
     }
 
 
     .radio label {
-
-        height: 31px;
 
         font-size: 7px;
 
@@ -1328,12 +1343,6 @@ body {
     }
 
 
-    .footer-left {
-
-        gap: 5px;
-    }
-
-
     .privacy {
 
         max-width: 145px;
@@ -1347,8 +1356,7 @@ body {
         height: 28px;
 
         padding:
-            0
-            7px;
+            0 7px;
 
         gap: 4px;
 
@@ -1373,8 +1381,7 @@ body {
         font-size: 8px;
 
         padding:
-            0
-            6px;
+            0 6px;
     }
 
 
@@ -1397,7 +1404,7 @@ body {
 
 
 /* =====================================================
-   VERY SMALL MOBILE
+   VERY SMALL
 ===================================================== */
 
 @media (max-width: 360px) {
@@ -1423,12 +1430,6 @@ body {
     .intro h1 {
 
         font-size: 16px;
-    }
-
-
-    .intro p {
-
-        font-size: 7px;
     }
 
 
@@ -1472,8 +1473,7 @@ body {
         font-size: 6px;
 
         padding:
-            0
-            5px;
+            0 5px;
     }
 
 
@@ -1500,13 +1500,16 @@ body {
 
 
 <!-- =====================================================
-     LIVE JOBS
+     LIVE JOBS TICKER
 ===================================================== -->
 
 <div class="jobs-ticker">
 
+
     <div class="ticker-label">
+
         🔴 LIVE JOBS
+
     </div>
 
 
@@ -1517,11 +1520,46 @@ body {
             id="tickerTrack"
         >
 
+            <span class="ticker-loading">
+
+                Loading current jobs...
+
+            </span>
+
         </div>
 
     </div>
 
+
 </div>
+
+
+<!-- =====================================================
+     HIDDEN CEIPAL WIDGET
+=====================================================
+
+     CEIPAL's official widget loads here.
+
+     We keep it hidden and use its rendered
+     job information for our custom ticker.
+
+===================================================== -->
+
+<div id="ceipal-widget-source">
+
+    <div id="example-widget-container"></div>
+
+</div>
+
+
+<!-- CEIPAL SCRIPT -->
+
+<script
+    type="text/javascript"
+    src="https://jobsapi.ceipal.com/APISource/widget.js"
+    data-ceipal-api-key="Y2hwbXlURThxbyt6dzMzUVludGZkZz09"
+    data-ceipal-career-portal-id="Z3RkUkt2OXZJVld2MjFpOVRSTXoxZz09">
+</script>
 
 
 <!-- =====================================================
@@ -1560,13 +1598,11 @@ body {
 
     <div class="header-right">
 
-
         <div class="header-badge">
 
             CAREER OPPORTUNITIES
 
         </div>
-
 
     </div>
 
@@ -1575,7 +1611,7 @@ body {
 
 
 <!-- =====================================================
-     FORM CONTENT
+     CONTENT
 ===================================================== -->
 
 <div
@@ -1590,13 +1626,17 @@ body {
     <div>
 
         <h1>
+
             Tell us about yourself.
+
         </h1>
 
 
         <p>
+
             Complete your professional details
             for relevant opportunities.
+
         </p>
 
     </div>
@@ -1608,6 +1648,20 @@ body {
 
     </div>
 
+
+</div>
+
+
+<!-- SELECTED JOB -->
+
+<div
+    class="selected-job"
+    id="selectedJob"
+>
+
+    Applying for:
+
+    <span id="selectedJobName"></span>
 
 </div>
 
@@ -1633,8 +1687,6 @@ body {
 </div>
 
 
-<!-- FULL NAME -->
-
 <div class="form-group">
 
     <label for="fullName">
@@ -1657,8 +1709,6 @@ body {
 
 </div>
 
-
-<!-- PHONE -->
 
 <div class="form-group">
 
@@ -1693,8 +1743,6 @@ body {
 </div>
 
 
-<!-- EMAIL -->
-
 <div class="form-group">
 
     <label for="email">
@@ -1727,8 +1775,6 @@ body {
 
 </div>
 
-
-<!-- LINKEDIN -->
 
 <div class="form-group">
 
@@ -1773,8 +1819,6 @@ body {
 </div>
 
 
-<!-- LAST WORKING DAY -->
-
 <div class="form-group">
 
     <label for="lastWorkingDay">
@@ -1792,8 +1836,6 @@ body {
 
 </div>
 
-
-<!-- NOTICE PERIOD -->
 
 <div class="form-group">
 
@@ -1829,8 +1871,6 @@ body {
 </div>
 
 
-<!-- CURRENT CTC -->
-
 <div class="form-group">
 
     <label for="currentCTC">
@@ -1851,8 +1891,6 @@ body {
 
 </div>
 
-
-<!-- EXPECTED CTC -->
 
 <div class="form-group">
 
@@ -1876,17 +1914,98 @@ body {
 
 
 <!-- =====================================================
+     JOB APPLICATION
+===================================================== -->
+
+<div class="section-heading">
+
+    03 &nbsp; Job Application
+
+</div>
+
+
+<div class="form-group job-applied">
+
+    <label for="jobApplied">
+
+        Job Applied For
+
+        <span class="required">*</span>
+
+    </label>
+
+
+    <input
+        type="text"
+        id="jobApplied"
+        name="jobApplied"
+        placeholder="e.g. Senior Java Developer"
+        required
+    >
+
+
+    <div
+        id="jobAppliedError"
+        class="field-error"
+    >
+
+        Please enter the job you are applying for.
+
+    </div>
+
+</div>
+
+
+<div class="form-group resume-url">
+
+    <label for="resumePortfolioUrl">
+
+        Resume / Portfolio URL
+
+        <span
+            style="
+                color:#888;
+                font-weight:600;
+            "
+        >
+
+            (Optional)
+
+        </span>
+
+    </label>
+
+
+    <input
+        type="url"
+        id="resumePortfolioUrl"
+        name="resumePortfolioUrl"
+        placeholder="https://drive.google.com/... or portfolio URL"
+    >
+
+
+    <div
+        id="resumeUrlError"
+        class="field-error"
+    >
+
+        Please enter a valid URL.
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
      OPPORTUNITY
 ===================================================== -->
 
 <div class="section-heading">
 
-    03 &nbsp; Opportunity & Location
+    04 &nbsp; Opportunity & Location
 
 </div>
 
-
-<!-- OPPORTUNITY PREFERENCE -->
 
 <div class="form-group opportunity">
 
@@ -1944,8 +2063,6 @@ body {
 </div>
 
 
-<!-- LOCATION -->
-
 <div class="form-group location">
 
     <label for="preferredLocation">
@@ -1990,14 +2107,11 @@ body {
         </div>
 
 
-        <!-- LINKEDIN -->
-
         <a
             href="https://www.linkedin.com/in/iamthakurofficial/"
             target="_blank"
             rel="noopener noreferrer"
             class="linkedin-button"
-            title="Visit LinkedIn Profile"
         >
 
 
@@ -2013,10 +2127,7 @@ body {
             </svg>
 
 
-            <span>
-                LinkedIn
-            </span>
-
+            LinkedIn
 
         </a>
 
@@ -2051,7 +2162,7 @@ body {
 
 
 <!-- =====================================================
-     SUCCESS MESSAGE
+     SUCCESS
 ===================================================== -->
 
 <div
@@ -2061,18 +2172,24 @@ body {
 
 
     <div class="success-icon">
+
         ✓
+
     </div>
 
 
     <h2>
+
         Application Submitted
+
     </h2>
 
 
     <p>
+
         Thank you. Your application has been
         successfully received.
+
     </p>
 
 
@@ -2099,7 +2216,15 @@ body {
 
 <div class="credit">
 
-    Made with ❤ by
+    Made with
+
+    <img
+        src="https://iili.io/2QpqFcB.jpg"
+        alt="Love"
+        class="credit-heart"
+    >
+
+    by
 
     <a
         href="https://www.linkedin.com/in/iamthakurofficial/"
@@ -2120,7 +2245,7 @@ body {
 <script>
 
 /* =====================================================
-   GOOGLE APPS SCRIPT URL
+   GOOGLE APPS SCRIPT
 ===================================================== */
 
 const GOOGLE_SCRIPT_URL =
@@ -2167,6 +2292,24 @@ document.getElementById(
 );
 
 
+const tickerTrack =
+document.getElementById(
+    "tickerTrack"
+);
+
+
+const selectedJob =
+document.getElementById(
+    "selectedJob"
+);
+
+
+const selectedJobName =
+document.getElementById(
+    "selectedJobName"
+);
+
+
 /* =====================================================
    INPUTS
 ===================================================== */
@@ -2195,8 +2338,20 @@ document.getElementById(
 );
 
 
+const jobApplied =
+document.getElementById(
+    "jobApplied"
+);
+
+
+const resumePortfolioUrl =
+document.getElementById(
+    "resumePortfolioUrl"
+);
+
+
 /* =====================================================
-   ERROR ELEMENTS
+   ERRORS
 ===================================================== */
 
 const phoneError =
@@ -2223,24 +2378,28 @@ document.getElementById(
 );
 
 
+const jobAppliedError =
+document.getElementById(
+    "jobAppliedError"
+);
+
+
+const resumeUrlError =
+document.getElementById(
+    "resumeUrlError"
+);
+
+
 /* =====================================================
-   EMAIL VALIDATION
+   VALIDATION
 ===================================================== */
 
 function validateEmail(value) {
 
-    const pattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-    return pattern.test(
-        value
-    );
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+        .test(value);
 }
 
-
-/* =====================================================
-   PHONE VALIDATION
-===================================================== */
 
 function validatePhone(value) {
 
@@ -2254,24 +2413,38 @@ function validatePhone(value) {
 }
 
 
-/* =====================================================
-   LINKEDIN VALIDATION
-===================================================== */
-
 function validateLinkedIn(value) {
 
-    const pattern =
-        /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_%\-]+\/?$/i;
-
-    return pattern.test(
-        value.trim()
-    );
+    return /^https?:\/\/(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_%\-]+\/?$/i
+        .test(
+            value.trim()
+        );
 }
 
 
-/* =====================================================
-   NOTICE PERIOD VALIDATION
-===================================================== */
+function validateURL(value) {
+
+    try {
+
+        const url =
+            new URL(
+                value.trim()
+            );
+
+        return (
+            url.protocol === "http:" ||
+            url.protocol === "https:"
+        );
+
+    }
+
+    catch {
+
+        return false;
+
+    }
+}
+
 
 function validateNotice(value) {
 
@@ -2280,6 +2453,7 @@ function validateNotice(value) {
     ) {
 
         return false;
+
     }
 
 
@@ -2295,7 +2469,7 @@ function validateNotice(value) {
 
 
 /* =====================================================
-   FIELD ERROR
+   ERROR HELPERS
 ===================================================== */
 
 function showFieldError(
@@ -2329,12 +2503,12 @@ function hideFieldError(
 
 
 /* =====================================================
-   LIVE EMAIL VALIDATION
+   LIVE VALIDATION
 ===================================================== */
 
 email.addEventListener(
     "input",
-    function() {
+    () => {
 
         if (
             email.value === "" ||
@@ -2354,13 +2528,9 @@ email.addEventListener(
 );
 
 
-/* =====================================================
-   LIVE LINKEDIN VALIDATION
-===================================================== */
-
 linkedin.addEventListener(
     "input",
-    function() {
+    () => {
 
         if (
             linkedin.value !== "" &&
@@ -2380,13 +2550,9 @@ linkedin.addEventListener(
 );
 
 
-/* =====================================================
-   LIVE NOTICE VALIDATION
-===================================================== */
-
 noticePeriod.addEventListener(
     "input",
-    function() {
+    () => {
 
         if (
             validateNotice(
@@ -2400,6 +2566,510 @@ noticePeriod.addEventListener(
             );
 
         }
+
+    }
+);
+
+
+jobApplied.addEventListener(
+    "input",
+    () => {
+
+        if (
+            jobApplied.value.trim() !== ""
+        ) {
+
+            hideFieldError(
+                jobApplied,
+                jobAppliedError
+            );
+
+        }
+
+    }
+);
+
+
+resumePortfolioUrl.addEventListener(
+    "input",
+    () => {
+
+        const value =
+            resumePortfolioUrl.value.trim();
+
+
+        if (
+            value === "" ||
+            validateURL(value)
+        ) {
+
+            hideFieldError(
+                resumePortfolioUrl,
+                resumeUrlError
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SELECT JOB
+===================================================== */
+
+function selectJob(
+    jobTitle
+) {
+
+    jobTitle =
+        String(jobTitle)
+        .trim();
+
+
+    if (
+        !jobTitle
+    ) {
+
+        return;
+
+    }
+
+
+    /*
+       Put selected job into
+       mandatory input.
+    */
+
+    jobApplied.value =
+        jobTitle;
+
+
+    selectedJobName.textContent =
+        jobTitle;
+
+
+    selectedJob.classList.add(
+        "show"
+    );
+
+
+    /*
+       Highlight selected input.
+    */
+
+    jobApplied.focus();
+
+
+    jobApplied.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+/* =====================================================
+   CREATE TICKER
+===================================================== */
+
+function createTickerJobs(
+    jobs
+) {
+
+    if (
+        !jobs ||
+        !jobs.length
+    ) {
+
+        tickerTrack.innerHTML = `
+
+            <span class="ticker-empty">
+
+                No current job openings available.
+
+            </span>
+
+        `;
+
+        return;
+
+    }
+
+
+    const firstSet =
+        jobs
+        .map(
+            function(job) {
+
+                return `
+
+                    <button
+                        type="button"
+                        class="ticker-item"
+                        data-job-title="${escapeHTML(job.title)}"
+                        title="Apply for ${escapeHTML(job.title)}"
+                    >
+
+                        <span class="ticker-dot"></span>
+
+                        ${escapeHTML(job.title)}
+
+                        ${job.location
+                            ? " — " +
+                              escapeHTML(job.location)
+                            : ""
+                        }
+
+                    </button>
+
+                `;
+
+            }
+        )
+        .join("");
+
+
+    /*
+       Duplicate jobs to create
+       continuous scrolling.
+    */
+
+    tickerTrack.innerHTML =
+        firstSet +
+        firstSet;
+
+
+    /*
+       Add click events.
+    */
+
+    tickerTrack
+        .querySelectorAll(
+            ".ticker-item"
+        )
+        .forEach(
+            function(button) {
+
+                button.addEventListener(
+                    "click",
+                    function() {
+
+                        selectJob(
+                            button.dataset.jobTitle
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
+
+function escapeHTML(
+    value
+) {
+
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =====================================================
+   READ CEIPAL WIDGET
+===================================================== */
+
+function readCEIPALJobs() {
+
+    /*
+       The CEIPAL widget can render its own
+       career portal markup.
+
+       We inspect the rendered DOM after
+       CEIPAL has loaded.
+    */
+
+    const widget =
+        document.getElementById(
+            "ceipal-widget-source"
+        );
+
+
+    if (
+        !widget
+    ) {
+
+        return [];
+
+    }
+
+
+    const results = [];
+
+
+    /*
+       Look for links/buttons commonly
+       generated by career widgets.
+    */
+
+    const elements =
+        widget.querySelectorAll(
+            "a, button"
+        );
+
+
+    elements.forEach(
+        function(element) {
+
+            const text =
+                element.innerText
+                    .trim();
+
+
+            if (
+                !text ||
+                text.length < 3
+            ) {
+
+                return;
+
+            }
+
+
+            /*
+               Ignore generic CEIPAL controls.
+            */
+
+            const lower =
+                text.toLowerCase();
+
+
+            const ignored = [
+
+                "search",
+                "apply",
+                "login",
+                "sign in",
+                "register",
+                "next",
+                "previous",
+                "filter",
+                "clear",
+                "submit",
+                "view more",
+                "read more"
+
+            ];
+
+
+            if (
+                ignored.includes(
+                    lower
+                )
+            ) {
+
+                return;
+
+            }
+
+
+            /*
+               Only use reasonably short
+               text as a possible job title.
+            */
+
+            if (
+                text.length > 180
+            ) {
+
+                return;
+
+            }
+
+
+            /*
+               Prevent duplicates.
+            */
+
+            const exists =
+                results.some(
+                    function(job) {
+
+                        return (
+                            job.title === text
+                        );
+
+                    }
+                );
+
+
+            if (
+                !exists
+            ) {
+
+                results.push({
+
+                    title: text,
+
+                    location: ""
+
+                });
+
+            }
+
+        }
+    );
+
+
+    return results;
+
+}
+
+
+/* =====================================================
+   LOAD CEIPAL JOBS
+===================================================== */
+
+let ceipalAttempts = 0;
+
+
+function loadCEIPALJobs() {
+
+    ceipalAttempts++;
+
+
+    const jobs =
+        readCEIPALJobs();
+
+
+    if (
+        jobs.length > 0
+    ) {
+
+        /*
+           Remove obvious non-job text
+           and use the first 20 results.
+        */
+
+        const cleanJobs =
+            jobs
+            .filter(
+                function(job) {
+
+                    const title =
+                        job.title
+                            .toLowerCase();
+
+
+                    return (
+                        !title.includes(
+                            "career"
+                        ) &&
+                        !title.includes(
+                            "current opening"
+                        ) &&
+                        !title.includes(
+                            "job search"
+                        ) &&
+                        !title.includes(
+                            "job title"
+                        )
+                    );
+
+                }
+            )
+            .slice(
+                0,
+                20
+            );
+
+
+        createTickerJobs(
+            cleanJobs
+        );
+
+
+        return;
+
+    }
+
+
+    /*
+       CEIPAL may load asynchronously,
+       so try again.
+    */
+
+    if (
+        ceipalAttempts < 20
+    ) {
+
+        setTimeout(
+            loadCEIPALJobs,
+            1000
+        );
+
+        return;
+
+    }
+
+
+    /*
+       If the widget cannot be read,
+       show a clear message.
+    */
+
+    tickerTrack.innerHTML = `
+
+        <span class="ticker-empty">
+
+            Unable to load current jobs.
+            Please refresh the page.
+
+        </span>
+
+    `;
+
+}
+
+
+/* =====================================================
+   START CEIPAL LOADING
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        setTimeout(
+            loadCEIPALJobs,
+            1500
+        );
 
     }
 );
@@ -2419,8 +3089,6 @@ form.addEventListener(
         hideStatus();
 
 
-        /* HTML validation */
-
         if (
             !form.checkValidity()
         ) {
@@ -2428,10 +3096,9 @@ form.addEventListener(
             form.reportValidity();
 
             return;
+
         }
 
-
-        /* Phone */
 
         if (
             !validatePhone(
@@ -2447,10 +3114,9 @@ form.addEventListener(
             phone.focus();
 
             return;
+
         }
 
-
-        /* Email */
 
         if (
             !validateEmail(
@@ -2466,10 +3132,9 @@ form.addEventListener(
             email.focus();
 
             return;
+
         }
 
-
-        /* LinkedIn */
 
         if (
             !validateLinkedIn(
@@ -2485,10 +3150,9 @@ form.addEventListener(
             linkedin.focus();
 
             return;
+
         }
 
-
-        /* Notice */
 
         if (
             !validateNotice(
@@ -2504,10 +3168,48 @@ form.addEventListener(
             noticePeriod.focus();
 
             return;
+
         }
 
 
-        /* Submit button */
+        if (
+            jobApplied.value.trim() === ""
+        ) {
+
+            showFieldError(
+                jobApplied,
+                jobAppliedError
+            );
+
+            jobApplied.focus();
+
+            return;
+
+        }
+
+
+        const resumeURL =
+            resumePortfolioUrl.value.trim();
+
+
+        if (
+            resumeURL !== "" &&
+            !validateURL(
+                resumeURL
+            )
+        ) {
+
+            showFieldError(
+                resumePortfolioUrl,
+                resumeUrlError
+            );
+
+            resumePortfolioUrl.focus();
+
+            return;
+
+        }
+
 
         submitButton.disabled =
             true;
@@ -2517,9 +3219,9 @@ form.addEventListener(
             "Submitting...";
 
 
-        /* =================================================
-           COLLECT FORM DATA
-        ================================================= */
+        /*
+           Data sent to Google Apps Script.
+        */
 
         const formData = {
 
@@ -2572,6 +3274,14 @@ form.addEventListener(
                 .value,
 
 
+            jobApplied:
+                jobApplied.value.trim(),
+
+
+            resumePortfolioUrl:
+                resumeURL,
+
+
             opportunity:
                 document
                 .querySelector(
@@ -2586,17 +3296,10 @@ form.addEventListener(
                     "preferredLocation"
                 )
                 .value
-                .trim(),
-
-
-            jobApplied: ""
+                .trim()
 
         };
 
-
-        /* =================================================
-           SEND TO GOOGLE SHEETS
-        ================================================= */
 
         try {
 
@@ -2629,10 +3332,11 @@ form.addEventListener(
         }
 
 
-        catch (error) {
+        catch (
+            error
+        ) {
 
             console.error(
-                "Submission Error:",
                 error
             );
 
@@ -2656,7 +3360,7 @@ form.addEventListener(
 
 
 /* =====================================================
-   SHOW SUCCESS
+   SUCCESS
 ===================================================== */
 
 function showSuccess() {
@@ -2672,19 +3376,15 @@ function showSuccess() {
 
 
 /* =====================================================
-   BACK TO APPLICATION
+   BACK BUTTON
 ===================================================== */
 
 homeButton.addEventListener(
     "click",
     function() {
 
-        /* Reset form */
-
         form.reset();
 
-
-        /* Reset button */
 
         submitButton.disabled =
             false;
@@ -2694,14 +3394,24 @@ homeButton.addEventListener(
             "Submit Application →";
 
 
-        /* Remove errors */
+        selectedJob.classList.remove(
+            "show"
+        );
+
+
+        selectedJobName.textContent =
+            "";
+
 
         [
             phone,
             email,
             linkedin,
-            noticePeriod
-        ].forEach(
+            noticePeriod,
+            jobApplied,
+            resumePortfolioUrl
+        ]
+        .forEach(
             function(input) {
 
                 input.classList.remove(
@@ -2716,8 +3426,11 @@ homeButton.addEventListener(
             phoneError,
             emailError,
             linkedinError,
-            noticeError
-        ].forEach(
+            noticeError,
+            jobAppliedError,
+            resumeUrlError
+        ]
+        .forEach(
             function(error) {
 
                 error.classList.remove(
@@ -2730,8 +3443,6 @@ homeButton.addEventListener(
 
         hideStatus();
 
-
-        /* Show form */
 
         successMessage.style.display =
             "none";
@@ -2748,7 +3459,9 @@ homeButton.addEventListener(
    STATUS
 ===================================================== */
 
-function showStatus(message) {
+function showStatus(
+    message
+) {
 
     statusMessage.textContent =
         message;
@@ -2778,88 +3491,6 @@ function hideStatus() {
         "none";
 
 }
-
-
-/* =====================================================
-   LIVE JOBS
-=====================================================
-
-   Temporary job list.
-
-   Later this can be connected to a
-   Google Sheet containing:
-
-   Job ID
-   Job Title
-   Location
-   Status
-
-   Only Status = LIVE will be displayed.
-
-===================================================== */
-
-const liveJobs = [
-
-    "Senior Java Developer — Bangalore",
-
-    "MuleSoft Developer — Remote",
-
-    "AEM Developer — Hyderabad",
-
-    "Microsoft Dynamics 365 Developer — Pune",
-
-    "Java Tech Lead — Bangalore",
-
-    "Senior .NET Developer — Hyderabad",
-
-    "Salesforce Developer — Remote"
-
-];
-
-
-function loadLiveJobs() {
-
-    const ticker =
-        document.getElementById(
-            "tickerTrack"
-        );
-
-
-    const jobsHTML =
-        liveJobs
-        .map(
-            function(job) {
-
-                return `
-
-                    <span class="ticker-item">
-
-                        <span class="ticker-dot"></span>
-
-                        ${job}
-
-                    </span>
-
-                `;
-
-            }
-        )
-        .join("");
-
-
-    /*
-       Duplicate the list so the
-       ticker can loop continuously.
-    */
-
-    ticker.innerHTML =
-        jobsHTML +
-        jobsHTML;
-
-}
-
-
-loadLiveJobs();
 
 </script>
 
