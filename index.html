@@ -5,19 +5,16 @@
 
 <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Sparix Global | Candidate Application</title>
 
-
 <style>
 
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 * {
     margin: 0;
@@ -25,33 +22,27 @@
     box-sizing: border-box;
 }
 
-
 html,
 body {
-
     width: 100%;
     height: 100%;
-
     overflow: hidden;
 }
 
-
 body {
-
     font-family:
         Arial,
         Helvetica,
         sans-serif;
 
     background: #f3f3f3;
-
     color: #111111;
 }
 
 
-/* =====================================================
+/* =========================================================
    PAGE
-===================================================== */
+========================================================= */
 
 .page {
 
@@ -67,9 +58,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    JOB TICKER
-===================================================== */
+========================================================= */
 
 .jobs-ticker {
 
@@ -117,7 +108,7 @@ body {
 
     flex-shrink: 0;
 
-    z-index: 2;
+    z-index: 5;
 }
 
 
@@ -131,6 +122,8 @@ body {
 
     display: flex;
     align-items: center;
+
+    position: relative;
 }
 
 
@@ -140,14 +133,23 @@ body {
 
     align-items: center;
 
-    gap: 55px;
+    gap: 60px;
 
     white-space: nowrap;
 
-    padding-left: 25px;
+    padding-left: 30px;
+
+    /*
+       SLOW ticker
+
+       Previously 35s / 55s.
+       Now 150 seconds.
+    */
 
     animation:
-        tickerAnimation 35s linear infinite;
+        tickerAnimation 60s linear infinite;
+
+    will-change: transform;
 }
 
 
@@ -185,7 +187,7 @@ body {
 
     padding: 0;
 
-    transition: .2s;
+    transition: color .2s ease;
 }
 
 
@@ -193,13 +195,13 @@ body {
 
     color: #ffd400;
 
-    transform: scale(1.03);
 }
 
 
 .ticker-dot {
 
     width: 7px;
+
     height: 7px;
 
     flex-shrink: 0;
@@ -212,7 +214,7 @@ body {
 
 .ticker-location {
 
-    color: #aaaaaa;
+    color: #999999;
 
     font-weight: 600;
 }
@@ -221,19 +223,25 @@ body {
 @keyframes tickerAnimation {
 
     from {
-        transform: translateX(0);
+
+        transform:
+            translateX(0);
+
     }
 
     to {
-        transform: translateX(-50%);
+
+        transform:
+            translateX(-50%);
+
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    APPLICATION CARD
-===================================================== */
+========================================================= */
 
 .application-card {
 
@@ -264,9 +272,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    HEADER
-===================================================== */
+========================================================= */
 
 .header {
 
@@ -344,9 +352,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTENT
-===================================================== */
+========================================================= */
 
 .content {
 
@@ -364,9 +372,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    INTRO
-===================================================== */
+========================================================= */
 
 .intro {
 
@@ -416,9 +424,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    SELECTED JOB
-===================================================== */
+========================================================= */
 
 .selected-job {
 
@@ -454,9 +462,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    FORM
-===================================================== */
+========================================================= */
 
 .form {
 
@@ -534,9 +542,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    INPUTS
-===================================================== */
+========================================================= */
 
 .form-group input {
 
@@ -560,7 +568,10 @@ body {
 
     font-size: 11px;
 
-    transition: .2s;
+    transition:
+        border .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
 }
 
 
@@ -584,9 +595,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    ERROR
-===================================================== */
+========================================================= */
 
 .field-error {
 
@@ -608,9 +619,9 @@ body {
 }
 
 
-/* =====================================================
-   JOB / RESUME / LOCATION
-===================================================== */
+/* =========================================================
+   SPECIAL FIELDS
+========================================================= */
 
 .job-applied {
 
@@ -636,9 +647,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    RADIO
-===================================================== */
+========================================================= */
 
 .radio-container {
 
@@ -649,8 +660,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+        1fr 1fr;
 
     gap: 6px;
 }
@@ -712,9 +722,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 .footer {
 
@@ -758,9 +768,9 @@ body {
 }
 
 
-/* =====================================================
-   LINKEDIN BUTTON
-===================================================== */
+/* =========================================================
+   LINKEDIN
+========================================================= */
 
 .linkedin-button {
 
@@ -814,9 +824,9 @@ body {
 }
 
 
-/* =====================================================
-   SUBMIT BUTTON
-===================================================== */
+/* =========================================================
+   SUBMIT
+========================================================= */
 
 .submit-btn {
 
@@ -862,9 +872,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    STATUS
-===================================================== */
+========================================================= */
 
 .status {
 
@@ -896,9 +906,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    SUCCESS
-===================================================== */
+========================================================= */
 
 .success {
 
@@ -988,9 +998,9 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    CREDIT
-===================================================== */
+========================================================= */
 
 .credit {
 
@@ -1034,31 +1044,37 @@ body {
 }
 
 
-/* =====================================================
+/* =========================================================
    TABLET
-===================================================== */
+========================================================= */
 
 @media (max-width: 800px) {
 
     .header {
-        padding: 7px 17px;
-    }
 
+        padding:
+            7px 17px;
+
+    }
 
     .company-logo {
-        width: 120px;
-    }
 
+        width: 120px;
+
+    }
 
     .header-title {
-        font-size: 16px;
-    }
 
+        font-size: 16px;
+
+    }
 
     .content {
-        padding: 9px 17px;
-    }
 
+        padding:
+            9px 17px;
+
+    }
 
     .form {
 
@@ -1070,316 +1086,358 @@ body {
 
     }
 
-
     .job-applied,
     .resume-url,
     .opportunity,
     .location {
 
-        grid-column: span 1;
+        grid-column:
+            span 1;
 
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 520px) {
 
     .page {
-        padding: 3px 4px;
-    }
 
+        padding:
+            3px 4px;
+
+    }
 
     .jobs-ticker {
 
-        height: 27px;
+        height:
+            27px;
 
-        margin-bottom: 4px;
+        margin-bottom:
+            4px;
 
     }
-
 
     .ticker-label {
 
-        min-width: 76px;
+        min-width:
+            76px;
 
-        padding: 0 5px;
+        padding:
+            0 5px;
 
-        font-size: 7px;
+        font-size:
+            7px;
 
     }
-
 
     .ticker-item {
 
-        font-size: 7px;
+        font-size:
+            7px;
 
     }
-
 
     .ticker-track {
 
-        gap: 30px;
+        gap:
+            30px;
+
+        /*
+           Even slower on mobile.
+        */
+
+        animation-duration:
+            180s;
 
     }
 
-
     .application-card {
 
-        border-radius: 9px;
+        border-radius:
+            9px;
 
         box-shadow:
             3px 3px 0 #111111;
 
     }
 
-
     .header {
 
-        min-height: 44px;
+        min-height:
+            44px;
 
-        padding: 5px 9px;
+        padding:
+            5px 9px;
 
     }
-
 
     .logo-area {
 
-        gap: 7px;
+        gap:
+            7px;
 
     }
-
 
     .company-logo {
 
-        width: 95px;
+        width:
+            95px;
 
     }
-
 
     .header-title {
 
-        font-size: 10px;
+        font-size:
+            10px;
 
     }
-
 
     .header-badge {
 
-        padding: 5px 6px;
+        padding:
+            5px 6px;
 
-        font-size: 5px;
+        font-size:
+            5px;
 
     }
-
 
     .content {
 
-        padding: 7px 9px;
+        padding:
+            7px 9px;
 
     }
-
 
     .intro {
 
-        margin-bottom: 5px;
+        margin-bottom:
+            5px;
 
     }
-
 
     .intro h1 {
 
-        font-size: 17px;
+        font-size:
+            17px;
 
     }
-
 
     .intro p {
 
-        font-size: 7px;
+        font-size:
+            7px;
 
     }
-
 
     .required-note {
 
-        display: none;
+        display:
+            none;
 
     }
-
 
     .form {
 
-        gap: 5px;
+        gap:
+            5px;
 
     }
-
 
     .section-heading {
 
-        font-size: 6px;
+        font-size:
+            6px;
 
-        padding-bottom: 2px;
+        padding-bottom:
+            2px;
 
     }
-
 
     .form-group label {
 
-        font-size: 6px;
+        font-size:
+            6px;
 
-        margin-bottom: 2px;
+        margin-bottom:
+            2px;
 
     }
-
 
     .form-group input {
 
-        height: 29px;
+        height:
+            29px;
 
-        padding: 0 6px;
+        padding:
+            0 6px;
 
-        font-size: 8px;
+        font-size:
+            8px;
 
-        border-radius: 4px;
+        border-radius:
+            4px;
 
     }
-
 
     .radio-container,
     .radio label {
 
-        height: 29px;
+        height:
+            29px;
 
     }
-
 
     .radio label {
 
-        font-size: 6px;
+        font-size:
+            6px;
 
-        border-radius: 4px;
+        border-radius:
+            4px;
 
     }
-
 
     .footer {
 
-        margin-top: 5px;
+        margin-top:
+            5px;
 
-        padding-top: 5px;
+        padding-top:
+            5px;
 
     }
-
 
     .privacy {
 
-        max-width: 130px;
+        max-width:
+            130px;
 
-        font-size: 5px;
+        font-size:
+            5px;
 
     }
-
 
     .linkedin-button {
 
-        height: 26px;
+        height:
+            26px;
 
-        padding: 0 6px;
+        padding:
+            0 6px;
 
-        font-size: 6px;
+        font-size:
+            6px;
 
     }
-
 
     .linkedin-icon {
 
-        width: 11px;
+        width:
+            11px;
 
-        height: 11px;
+        height:
+            11px;
 
     }
-
 
     .submit-btn {
 
-        height: 30px;
+        height:
+            30px;
 
-        min-width: 105px;
+        min-width:
+            105px;
 
-        padding: 0 7px;
+        padding:
+            0 7px;
 
-        font-size: 7px;
+        font-size:
+            7px;
 
     }
 
-
     .credit {
 
-        font-size: 5px;
+        font-size:
+            5px;
 
     }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 360px) {
 
     .company-logo {
-        width: 82px;
-    }
 
+        width:
+            82px;
+
+    }
 
     .header-title {
-        font-size: 8px;
-    }
 
+        font-size:
+            8px;
+
+    }
 
     .header-badge {
-        display: none;
-    }
 
+        display:
+            none;
+
+    }
 
     .intro h1 {
-        font-size: 15px;
-    }
 
+        font-size:
+            15px;
+
+    }
 
     .form-group input {
 
-        height: 27px;
+        height:
+            27px;
 
-        font-size: 7px;
+        font-size:
+            7px;
 
     }
-
 
     .radio-container,
     .radio label {
 
-        height: 27px;
+        height:
+            27px;
 
     }
-
 
     .radio label {
-        font-size: 5px;
-    }
 
+        font-size:
+            5px;
+
+    }
 
     .submit-btn {
 
-        min-width: 90px;
+        min-width:
+            90px;
 
-        font-size: 6px;
+        font-size:
+            6px;
 
     }
 
@@ -1397,30 +1455,26 @@ body {
 
 
 <!-- =====================================================
-     DUMMY JOB TICKER
+     JOB TICKER
 ===================================================== -->
 
 <div class="jobs-ticker">
 
-
     <div class="ticker-label">
 
-        🔴 LIVE JOBS
+        🔴 LIVE IT JOBS
 
     </div>
 
 
     <div class="ticker-window">
 
-
         <div
             class="ticker-track"
             id="tickerTrack"
         ></div>
 
-
     </div>
-
 
 </div>
 
@@ -1518,7 +1572,9 @@ body {
 
     Applying for:
 
-    <span id="selectedJobName"></span>
+    <span
+        id="selectedJobName"
+    ></span>
 
 </div>
 
@@ -1534,7 +1590,7 @@ body {
 
 
 <!-- =====================================================
-     01 PERSONAL INFORMATION
+     PERSONAL INFORMATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1551,6 +1607,7 @@ body {
     <label for="fullName">
 
         Full Name
+
         <span class="required">*</span>
 
     </label>
@@ -1574,6 +1631,7 @@ body {
     <label for="phone">
 
         Phone Number
+
         <span class="required">*</span>
 
     </label>
@@ -1607,6 +1665,7 @@ body {
     <label for="email">
 
         Email Address
+
         <span class="required">*</span>
 
     </label>
@@ -1640,6 +1699,7 @@ body {
     <label for="linkedin">
 
         LinkedIn Profile
+
         <span class="required">*</span>
 
     </label>
@@ -1666,7 +1726,7 @@ body {
 
 
 <!-- =====================================================
-     02 PROFESSIONAL INFORMATION
+     PROFESSIONAL INFORMATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1702,6 +1762,7 @@ body {
     <label for="noticePeriod">
 
         Notice Period (Days)
+
         <span class="required">*</span>
 
     </label>
@@ -1774,7 +1835,7 @@ body {
 
 
 <!-- =====================================================
-     03 JOB APPLICATION
+     JOB APPLICATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1791,6 +1852,7 @@ body {
     <label for="jobApplied">
 
         Job Applied For
+
         <span class="required">*</span>
 
     </label>
@@ -1816,13 +1878,14 @@ body {
 </div>
 
 
-<!-- RESUME -->
+<!-- RESUME / PORTFOLIO -->
 
 <div class="form-group resume-url">
 
     <label for="resumePortfolioUrl">
 
         Resume / Portfolio URL
+
         <span class="optional">
             (Optional)
         </span>
@@ -1850,7 +1913,7 @@ body {
 
 
 <!-- =====================================================
-     04 OPPORTUNITY & LOCATION
+     OPPORTUNITY / LOCATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1925,6 +1988,7 @@ body {
     <label for="preferredLocation">
 
         Preferred Location
+
         <span class="required">*</span>
 
     </label>
@@ -1976,7 +2040,7 @@ body {
             >
 
                 <path
-                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0-4.14 2.07 2.07 0 0 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V8.99H3.54v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0-4.14 2.07 2.07 0 0 1 0 4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V8.99H3.54v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.22 0z"
                 />
 
             </svg>
@@ -2100,119 +2164,369 @@ body {
 
 <script>
 
-/* =====================================================
+/* =========================================================
    GOOGLE APPS SCRIPT URL
-===================================================== */
+========================================================= */
 
 const APPLICATION_API_URL =
-    "https://script.google.com/macros/s/AKfycby9el6QleynDeYvJhKOxPnMfJDXqk5-40Z713YCtRLJz-FwQ4Wk9WIkuoGUVrXu-pZrOg/exec";
+"https://script.google.com/macros/s/AKfycbzPq_TymxXdGyii-Y7azxJup7b_hPd4n8GKqo2lnbGqWf7ZRDOjz4abMuFI2Q1PVn02Yw/exec";
 
 
-/* =====================================================
-   DUMMY JOBS
-===================================================== */
+/* =========================================================
+   DUMMY IT JOBS
+========================================================= */
 
 const jobs = [
 
-    {
-        title: "Senior Java Developer",
-        location: "Bangalore"
-    },
+    /* JAVA / BACKEND */
 
-    {
-        title: "MuleSoft Developer",
-        location: "Remote"
-    },
+    {title:"Java Developer",location:"Bangalore"},
+    {title:"Senior Java Developer",location:"Remote"},
+    {title:"Java Tech Lead",location:"Hyderabad"},
+    {title:"Java Backend Developer",location:"Pune"},
+    {title:"Java Full Stack Developer",location:"Chennai"},
+    {title:"Java Microservices Developer",location:"Bangalore"},
+    {title:"Spring Boot Developer",location:"Remote"},
+    {title:"Senior Spring Boot Developer",location:"Hyderabad"},
+    {title:"J2EE Developer",location:"Mumbai"},
+    {title:"Backend Engineer",location:"Bangalore"},
+    {title:"Senior Backend Engineer",location:"Remote"},
+    {title:"Software Engineer - Java",location:"Pune"},
 
-    {
-        title: "AEM Developer",
-        location: "Hyderabad"
-    },
+    /* .NET */
 
-    {
-        title: "Salesforce Developer",
-        location: "Pune"
-    },
+    {title:".NET Developer",location:"Bangalore"},
+    {title:"Senior .NET Developer",location:"Remote"},
+    {title:".NET Core Developer",location:"Hyderabad"},
+    {title:"ASP.NET Developer",location:"Pune"},
+    {title:"C# Developer",location:"Chennai"},
+    {title:".NET Full Stack Developer",location:"Bangalore"},
+    {title:".NET Technical Lead",location:"Remote"},
+    {title:"Azure .NET Developer",location:"Hyderabad"},
 
-    {
-        title: "Dynamics 365 CRM Developer",
-        location: "Remote"
-    },
+    /* FRONTEND */
 
-    {
-        title: "Java Tech Lead",
-        location: "Chennai"
-    },
+    {title:"React Developer",location:"Bangalore"},
+    {title:"Senior React Developer",location:"Remote"},
+    {title:"Angular Developer",location:"Hyderabad"},
+    {title:"Senior Angular Developer",location:"Pune"},
+    {title:"Vue.js Developer",location:"Bangalore"},
+    {title:"Frontend Developer",location:"Remote"},
+    {title:"Senior Frontend Engineer",location:"Chennai"},
+    {title:"UI Developer",location:"Mumbai"},
+    {title:"UI Engineer",location:"Bangalore"},
+    {title:"JavaScript Developer",location:"Remote"},
+    {title:"TypeScript Developer",location:"Hyderabad"},
 
-    {
-        title: "DevOps Engineer",
-        location: "Bangalore"
-    },
+    /* FULL STACK */
 
-    {
-        title: "React Developer",
-        location: "Mumbai"
-    },
+    {title:"Full Stack Developer",location:"Bangalore"},
+    {title:"Senior Full Stack Developer",location:"Remote"},
+    {title:"MERN Stack Developer",location:"Hyderabad"},
+    {title:"MEAN Stack Developer",location:"Pune"},
+    {title:"Node.js Developer",location:"Bangalore"},
+    {title:"Node.js Backend Developer",location:"Remote"},
+    {title:"Python Full Stack Developer",location:"Chennai"},
+    {title:"MERN Full Stack Engineer",location:"Bangalore"},
 
-    {
-        title: "Business Analyst",
-        location: "Delhi NCR"
-    }
+    /* PYTHON */
+
+    {title:"Python Developer",location:"Bangalore"},
+    {title:"Senior Python Developer",location:"Remote"},
+    {title:"Django Developer",location:"Hyderabad"},
+    {title:"Flask Developer",location:"Pune"},
+    {title:"Python Backend Engineer",location:"Chennai"},
+    {title:"Python API Developer",location:"Remote"},
+
+    /* DATA */
+
+    {title:"Data Engineer",location:"Bangalore"},
+    {title:"Senior Data Engineer",location:"Remote"},
+    {title:"Big Data Engineer",location:"Hyderabad"},
+    {title:"ETL Developer",location:"Pune"},
+    {title:"Data Analyst",location:"Bangalore"},
+    {title:"Senior Data Analyst",location:"Remote"},
+    {title:"BI Developer",location:"Chennai"},
+    {title:"Power BI Developer",location:"Bangalore"},
+    {title:"Tableau Developer",location:"Hyderabad"},
+    {title:"Data Warehouse Developer",location:"Remote"},
+    {title:"SQL Data Analyst",location:"Pune"},
+
+    /* AI / ML */
+
+    {title:"Machine Learning Engineer",location:"Bangalore"},
+    {title:"Senior Machine Learning Engineer",location:"Remote"},
+    {title:"AI Engineer",location:"Hyderabad"},
+    {title:"Generative AI Engineer",location:"Bangalore"},
+    {title:"AI/ML Developer",location:"Pune"},
+    {title:"NLP Engineer",location:"Remote"},
+    {title:"Computer Vision Engineer",location:"Bangalore"},
+    {title:"Data Scientist",location:"Hyderabad"},
+    {title:"Senior Data Scientist",location:"Remote"},
+    {title:"MLOps Engineer",location:"Bangalore"},
+    {title:"AI Solutions Architect",location:"Remote"},
+    {title:"LLM Engineer",location:"Bangalore"},
+
+    /* CLOUD */
+
+    {title:"AWS Cloud Engineer",location:"Bangalore"},
+    {title:"Azure Cloud Engineer",location:"Hyderabad"},
+    {title:"Google Cloud Engineer",location:"Remote"},
+    {title:"Cloud Architect",location:"Bangalore"},
+    {title:"Cloud Engineer",location:"Pune"},
+    {title:"AWS Solution Architect",location:"Remote"},
+    {title:"Azure Solution Architect",location:"Chennai"},
+    {title:"Cloud Solutions Architect",location:"Bangalore"},
+    {title:"AWS DevOps Engineer",location:"Hyderabad"},
+    {title:"Azure DevOps Engineer",location:"Remote"},
+
+    /* DEVOPS */
+
+    {title:"DevOps Engineer",location:"Bangalore"},
+    {title:"Senior DevOps Engineer",location:"Remote"},
+    {title:"DevSecOps Engineer",location:"Hyderabad"},
+    {title:"CI/CD Engineer",location:"Pune"},
+    {title:"Release Engineer",location:"Chennai"},
+    {title:"Platform Engineer",location:"Bangalore"},
+    {title:"Site Reliability Engineer",location:"Remote"},
+    {title:"SRE Engineer",location:"Hyderabad"},
+
+    /* KUBERNETES */
+
+    {title:"Kubernetes Engineer",location:"Bangalore"},
+    {title:"Docker Engineer",location:"Remote"},
+    {title:"Kubernetes Administrator",location:"Hyderabad"},
+    {title:"Container Platform Engineer",location:"Pune"},
+    {title:"Cloud Native Engineer",location:"Bangalore"},
+
+    /* MULESOFT / INTEGRATION */
+
+    {title:"MuleSoft Developer",location:"Bangalore"},
+    {title:"Senior MuleSoft Developer",location:"Remote"},
+    {title:"MuleSoft Integration Developer",location:"Hyderabad"},
+    {title:"MuleSoft Architect",location:"Bangalore"},
+    {title:"Integration Developer",location:"Pune"},
+    {title:"API Integration Developer",location:"Remote"},
+    {title:"API Developer",location:"Chennai"},
+    {title:"Integration Architect",location:"Bangalore"},
+
+    /* AEM */
+
+    {title:"AEM Developer",location:"Bangalore"},
+    {title:"Senior AEM Developer",location:"Remote"},
+    {title:"AEM Assets Developer",location:"Hyderabad"},
+    {title:"AEM Technical Lead",location:"Pune"},
+    {title:"Adobe Experience Manager Developer",location:"Bangalore"},
+    {title:"AEM Architect",location:"Remote"},
+
+    /* SALESFORCE */
+
+    {title:"Salesforce Developer",location:"Bangalore"},
+    {title:"Senior Salesforce Developer",location:"Remote"},
+    {title:"Salesforce Administrator",location:"Hyderabad"},
+    {title:"Salesforce Technical Lead",location:"Pune"},
+    {title:"Salesforce Architect",location:"Bangalore"},
+    {title:"Salesforce Apex Developer",location:"Remote"},
+    {title:"Salesforce LWC Developer",location:"Chennai"},
+
+    /* DYNAMICS */
+
+    {title:"Microsoft Dynamics CRM Developer",location:"Bangalore"},
+    {title:"Dynamics 365 CRM Developer",location:"Remote"},
+    {title:"Dynamics 365 CE Developer",location:"Hyderabad"},
+    {title:"Dynamics 365 Technical Lead",location:"Pune"},
+    {title:"Dynamics CRM Consultant",location:"Bangalore"},
+    {title:"Dynamics 365 Architect",location:"Remote"},
+
+    /* ORACLE */
+
+    {title:"Oracle Developer",location:"Bangalore"},
+    {title:"Oracle DBA",location:"Hyderabad"},
+    {title:"Senior Oracle DBA",location:"Remote"},
+    {title:"Oracle PL/SQL Developer",location:"Pune"},
+    {title:"Oracle Fusion Consultant",location:"Bangalore"},
+    {title:"Oracle Technical Consultant",location:"Remote"},
+
+    /* SAP */
+
+    {title:"SAP ABAP Developer",location:"Bangalore"},
+    {title:"SAP FICO Consultant",location:"Hyderabad"},
+    {title:"SAP MM Consultant",location:"Pune"},
+    {title:"SAP SD Consultant",location:"Remote"},
+    {title:"SAP Basis Administrator",location:"Bangalore"},
+    {title:"SAP HANA Developer",location:"Hyderabad"},
+    {title:"SAP Technical Consultant",location:"Remote"},
+    {title:"SAP S/4HANA Consultant",location:"Bangalore"},
+
+    /* QA */
+
+    {title:"QA Engineer",location:"Bangalore"},
+    {title:"Senior QA Engineer",location:"Remote"},
+    {title:"Automation Test Engineer",location:"Hyderabad"},
+    {title:"Selenium Automation Tester",location:"Pune"},
+    {title:"Playwright Automation Engineer",location:"Bangalore"},
+    {title:"Cypress Automation Engineer",location:"Remote"},
+    {title:"SDET",location:"Chennai"},
+    {title:"Performance Test Engineer",location:"Bangalore"},
+    {title:"API Test Engineer",location:"Hyderabad"},
+    {title:"Mobile Automation Tester",location:"Remote"},
+
+    /* MOBILE */
+
+    {title:"Android Developer",location:"Bangalore"},
+    {title:"Senior Android Developer",location:"Remote"},
+    {title:"iOS Developer",location:"Hyderabad"},
+    {title:"Senior iOS Developer",location:"Pune"},
+    {title:"Flutter Developer",location:"Bangalore"},
+    {title:"React Native Developer",location:"Remote"},
+    {title:"Mobile Application Developer",location:"Chennai"},
+
+    /* SECURITY */
+
+    {title:"Cybersecurity Engineer",location:"Bangalore"},
+    {title:"Security Engineer",location:"Remote"},
+    {title:"Cloud Security Engineer",location:"Hyderabad"},
+    {title:"Application Security Engineer",location:"Pune"},
+    {title:"SOC Analyst",location:"Bangalore"},
+    {title:"Information Security Analyst",location:"Remote"},
+    {title:"IAM Engineer",location:"Chennai"},
+    {title:"Cybersecurity Analyst",location:"Bangalore"},
+    {title:"DevSecOps Security Engineer",location:"Remote"},
+
+    /* NETWORKING */
+
+    {title:"Network Engineer",location:"Bangalore"},
+    {title:"Senior Network Engineer",location:"Remote"},
+    {title:"Network Administrator",location:"Hyderabad"},
+    {title:"Network Security Engineer",location:"Pune"},
+    {title:"Cloud Network Engineer",location:"Bangalore"},
+    {title:"Cisco Network Engineer",location:"Remote"},
+
+    /* LINUX / INFRASTRUCTURE */
+
+    {title:"Linux Administrator",location:"Bangalore"},
+    {title:"Linux Engineer",location:"Remote"},
+    {title:"Systems Administrator",location:"Hyderabad"},
+    {title:"Infrastructure Engineer",location:"Pune"},
+    {title:"IT Infrastructure Engineer",location:"Bangalore"},
+    {title:"Systems Engineer",location:"Remote"},
+
+    /* ARCHITECTURE */
+
+    {title:"Software Architect",location:"Bangalore"},
+    {title:"Solution Architect",location:"Remote"},
+    {title:"Enterprise Architect",location:"Hyderabad"},
+    {title:"Technical Architect",location:"Pune"},
+    {title:"Cloud Architect",location:"Bangalore"},
+    {title:"Application Architect",location:"Remote"},
+    {title:"Integration Architect",location:"Hyderabad"},
+
+    /* LEADERSHIP */
+
+    {title:"Technical Lead",location:"Bangalore"},
+    {title:"Engineering Lead",location:"Remote"},
+    {title:"Technology Lead",location:"Hyderabad"},
+    {title:"Engineering Manager",location:"Pune"},
+    {title:"IT Project Manager",location:"Bangalore"},
+    {title:"Technical Project Manager",location:"Remote"},
+    {title:"Delivery Manager",location:"Hyderabad"},
+
+    /* BUSINESS / PRODUCT */
+
+    {title:"Business Analyst",location:"Bangalore"},
+    {title:"Technical Business Analyst",location:"Remote"},
+    {title:"IT Business Analyst",location:"Hyderabad"},
+    {title:"Product Analyst",location:"Pune"},
+    {title:"Product Manager",location:"Bangalore"},
+    {title:"Technical Product Manager",location:"Remote"},
+    {title:"Product Owner",location:"Hyderabad"},
+
+    /* SERVICENOW */
+
+    {title:"ServiceNow Developer",location:"Bangalore"},
+    {title:"Senior ServiceNow Developer",location:"Remote"},
+    {title:"ServiceNow Administrator",location:"Hyderabad"},
+    {title:"ServiceNow Consultant",location:"Pune"},
+    {title:"ServiceNow Architect",location:"Bangalore"},
+
+    /* WORKDAY */
+
+    {title:"Workday Consultant",location:"Bangalore"},
+    {title:"Workday Integration Consultant",location:"Remote"},
+    {title:"Workday Technical Consultant",location:"Hyderabad"},
+    {title:"Workday HCM Consultant",location:"Pune"},
+
+    /* RPA */
+
+    {title:"UiPath Developer",location:"Bangalore"},
+    {title:"Automation Anywhere Developer",location:"Remote"},
+    {title:"RPA Developer",location:"Hyderabad"},
+    {title:"RPA Technical Lead",location:"Pune"},
+    {title:"Blue Prism Developer",location:"Bangalore"},
+
+    /* DATABASE */
+
+    {title:"SQL Developer",location:"Bangalore"},
+    {title:"Database Developer",location:"Remote"},
+    {title:"PostgreSQL DBA",location:"Hyderabad"},
+    {title:"MySQL DBA",location:"Pune"},
+    {title:"MongoDB Developer",location:"Bangalore"},
+    {title:"Database Administrator",location:"Remote"},
+    {title:"SQL Server DBA",location:"Hyderabad"},
+    {title:"NoSQL Database Engineer",location:"Bangalore"},
+
+    /* BLOCKCHAIN */
+
+    {title:"Blockchain Developer",location:"Bangalore"},
+    {title:"Web3 Developer",location:"Remote"},
+    {title:"Smart Contract Developer",location:"Hyderabad"}
 
 ];
 
 
-/* =====================================================
+/* =========================================================
    ELEMENTS
-===================================================== */
+========================================================= */
 
 const form =
     document.getElementById(
         "candidateForm"
     );
 
-
 const tickerTrack =
     document.getElementById(
         "tickerTrack"
     );
-
 
 const selectedJob =
     document.getElementById(
         "selectedJob"
     );
 
-
 const selectedJobName =
     document.getElementById(
         "selectedJobName"
     );
-
 
 const submitButton =
     document.getElementById(
         "submitBtn"
     );
 
-
 const formContent =
     document.getElementById(
         "formContent"
     );
-
 
 const successMessage =
     document.getElementById(
         "successMessage"
     );
 
-
 const homeButton =
     document.getElementById(
         "homeButton"
     );
-
 
 const statusMessage =
     document.getElementById(
@@ -2220,69 +2534,59 @@ const statusMessage =
     );
 
 
-/* =====================================================
-   FORM INPUTS
-===================================================== */
+/* =========================================================
+   INPUTS
+========================================================= */
 
 const fullName =
     document.getElementById(
         "fullName"
     );
 
-
 const phone =
     document.getElementById(
         "phone"
     );
-
 
 const email =
     document.getElementById(
         "email"
     );
 
-
 const linkedin =
     document.getElementById(
         "linkedin"
     );
-
 
 const lastWorkingDay =
     document.getElementById(
         "lastWorkingDay"
     );
 
-
 const noticePeriod =
     document.getElementById(
         "noticePeriod"
     );
-
 
 const currentCTC =
     document.getElementById(
         "currentCTC"
     );
 
-
 const expectedCTC =
     document.getElementById(
         "expectedCTC"
     );
-
 
 const jobApplied =
     document.getElementById(
         "jobApplied"
     );
 
-
 const resumePortfolioUrl =
     document.getElementById(
         "resumePortfolioUrl"
     );
-
 
 const preferredLocation =
     document.getElementById(
@@ -2290,39 +2594,34 @@ const preferredLocation =
     );
 
 
-/* =====================================================
-   ERROR ELEMENTS
-===================================================== */
+/* =========================================================
+   ERRORS
+========================================================= */
 
 const phoneError =
     document.getElementById(
         "phoneError"
     );
 
-
 const emailError =
     document.getElementById(
         "emailError"
     );
-
 
 const linkedinError =
     document.getElementById(
         "linkedinError"
     );
 
-
 const noticeError =
     document.getElementById(
         "noticeError"
     );
 
-
 const jobAppliedError =
     document.getElementById(
         "jobAppliedError"
     );
-
 
 const resumeUrlError =
     document.getElementById(
@@ -2330,16 +2629,14 @@ const resumeUrlError =
     );
 
 
-/* =====================================================
+/* =========================================================
    VALIDATION
-===================================================== */
+========================================================= */
 
 function validateEmail(value) {
 
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
-        .test(
-            value
-        );
+        .test(value);
 
 }
 
@@ -2351,7 +2648,6 @@ function validatePhone(value) {
             /\D/g,
             ""
         );
-
 
     return (
         digits.length >= 10 &&
@@ -2380,7 +2676,6 @@ function validateURL(value) {
                 value.trim()
             );
 
-
         return (
             url.protocol === "http:" ||
             url.protocol === "https:"
@@ -2405,10 +2700,8 @@ function validateNotice(value) {
 
     }
 
-
     const number =
         Number(value);
-
 
     return (
         Number.isInteger(number) &&
@@ -2418,9 +2711,9 @@ function validateNotice(value) {
 }
 
 
-/* =====================================================
+/* =========================================================
    ERROR HANDLING
-===================================================== */
+========================================================= */
 
 function showError(
     input,
@@ -2430,7 +2723,6 @@ function showError(
     input.classList.add(
         "invalid"
     );
-
 
     error.classList.add(
         "show"
@@ -2448,7 +2740,6 @@ function hideError(
         "invalid"
     );
 
-
     error.classList.remove(
         "show"
     );
@@ -2456,9 +2747,9 @@ function hideError(
 }
 
 
-/* =====================================================
-   HTML ESCAPE
-===================================================== */
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
 
 function escapeHTML(value) {
 
@@ -2492,70 +2783,64 @@ function escapeHTML(value) {
 }
 
 
-/* =====================================================
-   CREATE JOB TICKER
-===================================================== */
+/* =========================================================
+   CREATE TICKER
+========================================================= */
 
 function createTicker() {
 
+    function createJobHTML(job) {
 
-    const createJob =
-        function(job) {
+        return `
 
-            return `
+            <button
+                type="button"
+                class="ticker-item"
+                data-job="${escapeHTML(job.title)}"
+            >
 
-                <button
-                    type="button"
-                    class="ticker-item"
-                    data-job="${escapeHTML(job.title)}"
+                <span
+                    class="ticker-dot"
+                ></span>
+
+                <span>
+                    ${escapeHTML(job.title)}
+                </span>
+
+                <span
+                    class="ticker-location"
                 >
 
-                    <span
-                        class="ticker-dot"
-                    ></span>
+                    — ${escapeHTML(job.location)}
+
+                </span>
+
+            </button>
+
+        `;
+
+    }
 
 
-                    <span>
-
-                        ${escapeHTML(job.title)}
-
-                    </span>
-
-
-                    <span
-                        class="ticker-location"
-                    >
-
-                        — ${escapeHTML(job.location)}
-
-                    </span>
-
-                </button>
-
-            `;
-
-        };
-
-
-    const tickerHTML =
+    const jobsHTML =
         jobs
-            .map(createJob)
+            .map(
+                createJobHTML
+            )
             .join("");
 
 
     /*
-       Duplicate ticker content
-       for continuous animation.
+       Duplicate the list.
+
+       This creates a continuous
+       ticker without a blank gap.
     */
 
     tickerTrack.innerHTML =
-        tickerHTML +
-        tickerHTML;
+        jobsHTML +
+        jobsHTML;
 
-
-    /*
-       Make every job clickable.
-    */
 
     tickerTrack
         .querySelectorAll(
@@ -2581,9 +2866,9 @@ function createTicker() {
 }
 
 
-/* =====================================================
+/* =========================================================
    SELECT JOB
-===================================================== */
+========================================================= */
 
 function selectJob(
     jobTitle
@@ -2592,15 +2877,12 @@ function selectJob(
     jobApplied.value =
         jobTitle;
 
-
     selectedJobName.textContent =
         jobTitle;
-
 
     selectedJob.classList.add(
         "show"
     );
-
 
     hideError(
         jobApplied,
@@ -2610,9 +2892,9 @@ function selectJob(
 }
 
 
-/* =====================================================
-   LIVE FIELD VALIDATION
-===================================================== */
+/* =========================================================
+   LIVE VALIDATION
+========================================================= */
 
 email.addEventListener(
     "input",
@@ -2724,7 +3006,6 @@ resumePortfolioUrl.addEventListener(
         const value =
             resumePortfolioUrl.value.trim();
 
-
         if (
             value === "" ||
             validateURL(value)
@@ -2741,9 +3022,9 @@ resumePortfolioUrl.addEventListener(
 );
 
 
-/* =====================================================
-   SUBMIT FORM
-===================================================== */
+/* =========================================================
+   SUBMIT
+========================================================= */
 
 form.addEventListener(
     "submit",
@@ -2755,9 +3036,7 @@ form.addEventListener(
         hideStatus();
 
 
-        /*
-           HTML validation
-        */
+        /* Browser validation */
 
         if (
             !form.checkValidity()
@@ -2770,9 +3049,7 @@ form.addEventListener(
         }
 
 
-        /*
-           Phone
-        */
+        /* Phone */
 
         if (
             !validatePhone(
@@ -2792,9 +3069,7 @@ form.addEventListener(
         }
 
 
-        /*
-           Email
-        */
+        /* Email */
 
         if (
             !validateEmail(
@@ -2814,9 +3089,7 @@ form.addEventListener(
         }
 
 
-        /*
-           LinkedIn
-        */
+        /* LinkedIn */
 
         if (
             !validateLinkedIn(
@@ -2836,9 +3109,7 @@ form.addEventListener(
         }
 
 
-        /*
-           Notice Period
-        */
+        /* Notice */
 
         if (
             !validateNotice(
@@ -2858,9 +3129,7 @@ form.addEventListener(
         }
 
 
-        /*
-           Job Applied
-        */
+        /* Job */
 
         if (
             !jobApplied.value.trim()
@@ -2878,20 +3147,13 @@ form.addEventListener(
         }
 
 
-        /*
-           Optional Resume/Portfolio
-        */
+        /* Optional Resume */
 
         if (
-
-            resumePortfolioUrl.value.trim() !== ""
-
-            &&
-
+            resumePortfolioUrl.value.trim() !== "" &&
             !validateURL(
                 resumePortfolioUrl.value.trim()
             )
-
         ) {
 
             showError(
@@ -2906,21 +3168,17 @@ form.addEventListener(
         }
 
 
-        /*
-           Disable submit button.
-        */
+        /* Disable */
 
         submitButton.disabled =
             true;
-
 
         submitButton.textContent =
             "Submitting...";
 
 
         /*
-           EXACT DATA STRUCTURE
-           MATCHES GOOGLE APPS SCRIPT
+           EXACT DATA SENT TO APPS SCRIPT
         */
 
         const data = {
@@ -2967,7 +3225,7 @@ form.addEventListener(
 
 
         console.log(
-            "Submitting candidate:",
+            "Candidate data:",
             data
         );
 
@@ -2975,90 +3233,85 @@ form.addEventListener(
         /*
            IMPORTANT:
 
-           no-cors means the browser cannot read
-           Google's response.
+           No custom Content-Type header.
 
-           Therefore we do NOT await fetch().
+           This avoids triggering an OPTIONS
+           preflight request.
         */
 
-        try {
+        fetch(
+            APPLICATION_API_URL,
+            {
 
-            fetch(
-                APPLICATION_API_URL,
-                {
+                method:
+                    "POST",
 
-                    method: "POST",
+                mode:
+                    "no-cors",
 
-                    mode: "no-cors",
+                body:
+                    JSON.stringify(
+                        data
+                    )
 
-                    headers: {
+            }
+        )
+        .then(
+            function() {
 
-                        "Content-Type":
-                            "text/plain;charset=utf-8"
+                /*
+                   no-cors response cannot be read.
+
+                   If fetch completes, show success.
+                */
+
+                setTimeout(
+                    function() {
+
+                        showSuccess();
 
                     },
+                    700
+                );
 
-                    body:
-                        JSON.stringify(
-                            data
-                        )
+            }
+        )
+        .catch(
+            function(error) {
 
-                }
-            );
-
-
-            /*
-               Show success after a short delay.
-            */
-
-            setTimeout(
-                function() {
-
-                    showSuccess();
-
-                },
-                800
-            );
+                console.error(
+                    "Submission error:",
+                    error
+                );
 
 
-        }
-
-        catch (
-            error
-        ) {
-
-            console.error(
-                error
-            );
+                submitButton.disabled =
+                    false;
 
 
-            submitButton.disabled =
-                false;
+                submitButton.textContent =
+                    "Submit Application →";
 
 
-            submitButton.textContent =
-                "Submit Application →";
+                showStatus(
+                    "Unable to submit application. Please try again."
+                );
 
-
-            showStatus(
-                "Unable to submit application. Please try again."
-            );
-
-        }
+            }
+        );
 
     }
 );
 
 
-/* =====================================================
-   SHOW SUCCESS
-===================================================== */
+/* =========================================================
+   SUCCESS
+========================================================= */
 
 function showSuccess() {
 
     formContent.style.display =
         "none";
-
 
     successMessage.style.display =
         "block";
@@ -3066,9 +3319,9 @@ function showSuccess() {
 }
 
 
-/* =====================================================
-   BACK TO FORM
-===================================================== */
+/* =========================================================
+   BACK TO APPLICATION
+========================================================= */
 
 homeButton.addEventListener(
     "click",
@@ -3146,9 +3399,9 @@ homeButton.addEventListener(
 );
 
 
-/* =====================================================
+/* =========================================================
    STATUS
-===================================================== */
+========================================================= */
 
 function showStatus(
     message
@@ -3157,10 +3410,8 @@ function showStatus(
     statusMessage.textContent =
         message;
 
-
     statusMessage.className =
         "status error";
-
 
     statusMessage.style.display =
         "block";
@@ -3173,10 +3424,8 @@ function hideStatus() {
     statusMessage.textContent =
         "";
 
-
     statusMessage.className =
         "status";
-
 
     statusMessage.style.display =
         "none";
@@ -3184,14 +3433,13 @@ function hideStatus() {
 }
 
 
-/* =====================================================
-   START TICKER
-===================================================== */
+/* =========================================================
+   START
+========================================================= */
 
 createTicker();
 
 </script>
-
 
 </body>
 
