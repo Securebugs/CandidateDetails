@@ -1051,11 +1051,11 @@ body {
 
 .home-btn {
 
-    height: 39px;
+    height: 60px;
 
     min-width: 150px;
 
-    padding: 0 17px;
+    padding: 0 30px;
 
     border: 2px solid #111111;
 
@@ -1067,7 +1067,7 @@ body {
 
     cursor: pointer;
 
-    font-size: 9px;
+    font-size: 14px;
 
     font-weight: 900;
 
@@ -1528,6 +1528,289 @@ body {
 
 }
 
+
+
+/* =========================================================
+   UPDATED RESPONSIVE OVERRIDES
+   Desktop remains unchanged.
+   Mobile: one input per row, full-height viewport.
+   Section numbers: yellow numbered badges.
+========================================================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 22px;
+    padding: 0 6px;
+    background: #ffd400;
+    color: #111111;
+    border: 1px solid #111111;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+@media (max-width: 520px) {
+    html, body {
+        width: 100%;
+        height: 100%;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .page {
+        width: 100%;
+        height: 100dvh;
+        padding: 3px 4px;
+        overflow: hidden;
+    }
+
+    .jobs-ticker {
+        height: 27px;
+        min-height: 27px;
+        margin-bottom: 4px;
+    }
+
+    .ticker-label {
+        min-width: 76px;
+        padding: 0 5px;
+        font-size: 7px;
+    }
+
+    .ticker-item {
+        font-size: 7px;
+    }
+
+    .ticker-track {
+        gap: 30px;
+        animation-duration: 1000s;
+    }
+
+    .application-card {
+        width: 100%;
+        height: calc(100dvh - 39px);
+        min-height: 0;
+        border-radius: 9px;
+        box-shadow: 3px 3px 0 #111111;
+        overflow: hidden;
+    }
+
+    .header {
+        height: 44px;
+        min-height: 44px;
+        padding: 5px 9px;
+    }
+
+    .logo-area { gap: 7px; }
+    .company-logo { width: 95px; }
+    .header-title { font-size: 10px; }
+    .header-badge { padding: 5px 6px; font-size: 5px; }
+
+    .content {
+        min-height: 0;
+        padding: 7px 9px 4px;
+        overflow: hidden;
+    }
+
+    .intro {
+        margin-bottom: 5px;
+    }
+
+    .intro h1 {
+        font-size: 16px;
+        line-height: 1;
+        margin-bottom: 3px;
+    }
+
+    .intro p {
+        font-size: 7px;
+        line-height: 1.2;
+    }
+
+    .required-note { display: none; }
+
+    /* ONE FIELD PER ROW ON MOBILE */
+    .form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .section-heading {
+        grid-column: 1 / -1;
+        min-height: 20px;
+        margin-top: 2px;
+        padding-bottom: 3px;
+        font-size: 7px;
+        letter-spacing: .5px;
+    }
+
+    .section-number {
+        min-width: 24px;
+        height: 18px;
+        padding: 0 5px;
+        border-radius: 3px;
+        font-size: 7px;
+    }
+
+    .form-group {
+        width: 100%;
+        min-width: 0;
+        grid-column: 1 / -1;
+    }
+
+    .form-group label {
+        height: auto;
+        margin-bottom: 3px;
+        font-size: 7px;
+        line-height: 1.1;
+    }
+
+    .form-group input {
+        width: 100%;
+        height: 30px;
+        padding: 0 7px;
+        font-size: 9px;
+        border-radius: 4px;
+    }
+
+    .field-error {
+        font-size: 6px;
+        margin-top: 2px;
+    }
+
+    .job-applied,
+    .resume-url,
+    .opportunity,
+    .location {
+        grid-column: 1 / -1;
+    }
+
+    .radio-container {
+        width: 100%;
+        height: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
+
+    .radio label {
+        width: 100%;
+        height: 30px;
+        font-size: 7px;
+        border-radius: 4px;
+        padding: 3px;
+    }
+
+    .footer {
+        margin-top: 5px;
+        padding-top: 5px;
+        gap: 5px;
+    }
+
+    .footer-left { gap: 5px; }
+
+    .privacy {
+        max-width: 125px;
+        font-size: 5px;
+        line-height: 1.2;
+    }
+
+    .linkedin-button {
+        height: 25px;
+        padding: 0 6px;
+        font-size: 6px;
+    }
+
+    .linkedin-icon {
+        width: 10px;
+        height: 10px;
+    }
+
+    .submit-btn {
+        height: 29px;
+        min-width: 105px;
+        padding: 0 7px;
+        font-size: 7px;
+    }
+
+    .credit {
+        height: 18px;
+        font-size: 5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .application-card {
+        height: calc(100dvh - 37px);
+    }
+
+    .header {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .company-logo { width: 82px; }
+    .header-title { font-size: 8px; }
+    .header-badge { display: none; }
+
+    .content { padding: 5px 7px 3px; }
+    .intro h1 { font-size: 14px; }
+    .intro p { font-size: 6px; }
+
+    .form {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
+    .section-heading {
+        font-size: 6px;
+        min-height: 18px;
+    }
+
+    .section-number {
+        min-width: 21px;
+        height: 16px;
+        font-size: 6px;
+    }
+
+    .form-group label { font-size: 6px; }
+
+    .form-group input {
+        height: 28px;
+        font-size: 8px;
+    }
+
+    .radio-container,
+    .radio label {
+        height: 28px;
+    }
+
+    .radio label { font-size: 6px; }
+
+    .submit-btn {
+        min-width: 90px;
+        height: 27px;
+        font-size: 6px;
+    }
+
+    .privacy {
+        max-width: 105px;
+        font-size: 4px;
+    }
+}
 </style>
 
 </head>
@@ -1679,9 +1962,8 @@ body {
 ===================================================== -->
 
 <div class="section-heading">
-
-    01 &nbsp; Personal Information
-
+    <span class="section-number">01</span>
+    <span>Personal Information</span>
 </div>
 
 
@@ -1815,9 +2097,8 @@ body {
 ===================================================== -->
 
 <div class="section-heading">
-
-    02 &nbsp; Professional Information
-
+    <span class="section-number">02</span>
+    <span>Professional Information</span>
 </div>
 
 
@@ -1924,9 +2205,8 @@ body {
 ===================================================== -->
 
 <div class="section-heading">
-
-    03 &nbsp; Job Application
-
+    <span class="section-number">03</span>
+    <span>Job Application</span>
 </div>
 
 
@@ -2002,9 +2282,8 @@ body {
 ===================================================== -->
 
 <div class="section-heading">
-
-    04 &nbsp; Opportunity & Location
-
+    <span class="section-number">04</span>
+    <span>Opportunity &amp; Location</span>
 </div>
 
 
