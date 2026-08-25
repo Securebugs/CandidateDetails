@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>Candidate Application</title>
+<title>Sparix Global | Candidate Application</title>
 
 
 <style>
@@ -68,7 +68,7 @@ body {
 
 
 /* =====================================================
-   LIVE JOB TICKER
+   JOB TICKER
 ===================================================== */
 
 .jobs-ticker {
@@ -97,7 +97,7 @@ body {
 
     height: 100%;
 
-    min-width: 120px;
+    min-width: 125px;
 
     padding: 0 12px;
 
@@ -113,9 +113,11 @@ body {
 
     font-weight: 900;
 
-    letter-spacing: .5px;
+    letter-spacing: .6px;
 
-    z-index: 5;
+    flex-shrink: 0;
+
+    z-index: 2;
 }
 
 
@@ -129,8 +131,6 @@ body {
 
     display: flex;
     align-items: center;
-
-    position: relative;
 }
 
 
@@ -140,14 +140,14 @@ body {
 
     align-items: center;
 
-    gap: 50px;
+    gap: 55px;
 
     white-space: nowrap;
 
     padding-left: 25px;
 
     animation:
-        tickerAnimation 32s linear infinite;
+        tickerAnimation 35s linear infinite;
 }
 
 
@@ -185,9 +185,7 @@ body {
 
     padding: 0;
 
-    transition:
-        color .2s,
-        transform .2s;
+    transition: .2s;
 }
 
 
@@ -209,47 +207,25 @@ body {
     border-radius: 50%;
 
     background: #ffd400;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(255,212,0,.12);
 }
 
 
-.ticker-loading,
-.ticker-empty,
-.ticker-error {
+.ticker-location {
 
-    color: #dddddd;
+    color: #aaaaaa;
 
-    font-size: 9px;
-
-    font-weight: 700;
-
-    padding-left: 20px;
-}
-
-
-.ticker-error {
-
-    color: #ff8c8c;
+    font-weight: 600;
 }
 
 
 @keyframes tickerAnimation {
 
-    0% {
-
-        transform:
-            translateX(0);
-
+    from {
+        transform: translateX(0);
     }
 
-    100% {
-
-        transform:
-            translateX(-50%);
-
+    to {
+        transform: translateX(-50%);
     }
 
 }
@@ -378,7 +354,7 @@ body {
 
     min-height: 0;
 
-    padding: 10px 28px 10px;
+    padding: 10px 28px 8px;
 
     overflow: hidden;
 
@@ -482,14 +458,6 @@ body {
    FORM
 ===================================================== */
 
-#candidateForm {
-
-    width: 100%;
-
-    min-height: 0;
-}
-
-
 .form {
 
     width: 100%;
@@ -505,10 +473,6 @@ body {
     gap: 7px 11px;
 }
 
-
-/* =====================================================
-   SECTION HEADING
-===================================================== */
 
 .section-heading {
 
@@ -529,10 +493,6 @@ body {
     text-transform: uppercase;
 }
 
-
-/* =====================================================
-   FORM GROUP
-===================================================== */
 
 .form-group {
 
@@ -575,7 +535,7 @@ body {
 
 
 /* =====================================================
-   INPUT
+   INPUTS
 ===================================================== */
 
 .form-group input {
@@ -600,10 +560,7 @@ body {
 
     font-size: 11px;
 
-    transition:
-        border .2s,
-        box-shadow .2s,
-        background .2s;
+    transition: .2s;
 }
 
 
@@ -615,12 +572,7 @@ body {
 
     box-shadow:
         0 0 0 3px
-        rgba(
-            255,
-            212,
-            0,
-            .25
-        );
+        rgba(255,212,0,.25);
 }
 
 
@@ -657,7 +609,7 @@ body {
 
 
 /* =====================================================
-   JOB / RESUME
+   JOB / RESUME / LOCATION
 ===================================================== */
 
 .job-applied {
@@ -672,15 +624,21 @@ body {
 }
 
 
-/* =====================================================
-   OPPORTUNITY
-===================================================== */
-
 .opportunity {
 
     grid-column: span 2;
 }
 
+
+.location {
+
+    grid-column: span 2;
+}
+
+
+/* =====================================================
+   RADIO
+===================================================== */
 
 .radio-container {
 
@@ -755,16 +713,6 @@ body {
 
 
 /* =====================================================
-   LOCATION
-===================================================== */
-
-.location {
-
-    grid-column: span 2;
-}
-
-
-/* =====================================================
    FOOTER
 ===================================================== */
 
@@ -811,7 +759,7 @@ body {
 
 
 /* =====================================================
-   LINKEDIN
+   LINKEDIN BUTTON
 ===================================================== */
 
 .linkedin-button {
@@ -867,7 +815,7 @@ body {
 
 
 /* =====================================================
-   SUBMIT
+   SUBMIT BUTTON
 ===================================================== */
 
 .submit-btn {
@@ -1093,28 +1041,22 @@ body {
 @media (max-width: 800px) {
 
     .header {
-
-        padding:
-            7px 17px;
+        padding: 7px 17px;
     }
 
 
     .company-logo {
-
         width: 120px;
     }
 
 
     .header-title {
-
         font-size: 16px;
     }
 
 
     .content {
-
-        padding:
-            9px 17px;
+        padding: 9px 17px;
     }
 
 
@@ -1125,6 +1067,7 @@ body {
                 2,
                 minmax(0, 1fr)
             );
+
     }
 
 
@@ -1134,6 +1077,7 @@ body {
     .location {
 
         grid-column: span 1;
+
     }
 
 }
@@ -1146,9 +1090,7 @@ body {
 @media (max-width: 520px) {
 
     .page {
-
-        padding:
-            3px 4px;
+        padding: 3px 4px;
     }
 
 
@@ -1157,6 +1099,7 @@ body {
         height: 27px;
 
         margin-bottom: 4px;
+
     }
 
 
@@ -1167,18 +1110,21 @@ body {
         padding: 0 5px;
 
         font-size: 7px;
+
     }
 
 
     .ticker-item {
 
         font-size: 7px;
+
     }
 
 
     .ticker-track {
 
         gap: 30px;
+
     }
 
 
@@ -1188,6 +1134,7 @@ body {
 
         box-shadow:
             3px 3px 0 #111111;
+
     }
 
 
@@ -1195,72 +1142,80 @@ body {
 
         min-height: 44px;
 
-        padding:
-            5px 9px;
+        padding: 5px 9px;
+
     }
 
 
     .logo-area {
 
         gap: 7px;
+
     }
 
 
     .company-logo {
 
         width: 95px;
+
     }
 
 
     .header-title {
 
         font-size: 10px;
+
     }
 
 
     .header-badge {
 
-        padding:
-            5px 6px;
+        padding: 5px 6px;
 
         font-size: 5px;
+
     }
 
 
     .content {
 
-        padding:
-            7px 9px;
+        padding: 7px 9px;
+
     }
 
 
     .intro {
 
         margin-bottom: 5px;
+
     }
 
 
     .intro h1 {
 
         font-size: 17px;
+
     }
 
 
     .intro p {
 
         font-size: 7px;
+
     }
 
 
     .required-note {
 
         display: none;
+
     }
 
 
     .form {
 
         gap: 5px;
+
     }
 
 
@@ -1269,6 +1224,7 @@ body {
         font-size: 6px;
 
         padding-bottom: 2px;
+
     }
 
 
@@ -1277,6 +1233,7 @@ body {
         font-size: 6px;
 
         margin-bottom: 2px;
+
     }
 
 
@@ -1284,12 +1241,12 @@ body {
 
         height: 29px;
 
-        padding:
-            0 6px;
+        padding: 0 6px;
 
         font-size: 8px;
 
         border-radius: 4px;
+
     }
 
 
@@ -1297,6 +1254,7 @@ body {
     .radio label {
 
         height: 29px;
+
     }
 
 
@@ -1305,6 +1263,7 @@ body {
         font-size: 6px;
 
         border-radius: 4px;
+
     }
 
 
@@ -1313,6 +1272,7 @@ body {
         margin-top: 5px;
 
         padding-top: 5px;
+
     }
 
 
@@ -1321,6 +1281,7 @@ body {
         max-width: 130px;
 
         font-size: 5px;
+
     }
 
 
@@ -1328,10 +1289,10 @@ body {
 
         height: 26px;
 
-        padding:
-            0 6px;
+        padding: 0 6px;
 
         font-size: 6px;
+
     }
 
 
@@ -1340,6 +1301,7 @@ body {
         width: 11px;
 
         height: 11px;
+
     }
 
 
@@ -1349,16 +1311,17 @@ body {
 
         min-width: 105px;
 
-        padding:
-            0 7px;
+        padding: 0 7px;
 
         font-size: 7px;
+
     }
 
 
     .credit {
 
         font-size: 5px;
+
     }
 
 }
@@ -1371,25 +1334,21 @@ body {
 @media (max-width: 360px) {
 
     .company-logo {
-
         width: 82px;
     }
 
 
     .header-title {
-
         font-size: 8px;
     }
 
 
     .header-badge {
-
         display: none;
     }
 
 
     .intro h1 {
-
         font-size: 15px;
     }
 
@@ -1399,6 +1358,7 @@ body {
         height: 27px;
 
         font-size: 7px;
+
     }
 
 
@@ -1406,11 +1366,11 @@ body {
     .radio label {
 
         height: 27px;
+
     }
 
 
     .radio label {
-
         font-size: 5px;
     }
 
@@ -1420,6 +1380,7 @@ body {
         min-width: 90px;
 
         font-size: 6px;
+
     }
 
 }
@@ -1436,7 +1397,7 @@ body {
 
 
 <!-- =====================================================
-     LIVE JOB TICKER
+     DUMMY JOB TICKER
 ===================================================== -->
 
 <div class="jobs-ticker">
@@ -1455,15 +1416,7 @@ body {
         <div
             class="ticker-track"
             id="tickerTrack"
-        >
-
-            <span class="ticker-loading">
-
-                Loading current openings...
-
-            </span>
-
-        </div>
+        ></div>
 
 
     </div>
@@ -1479,9 +1432,7 @@ body {
 <div class="application-card">
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- HEADER -->
 
 <header class="header">
 
@@ -1517,7 +1468,7 @@ body {
 
 
 <!-- =====================================================
-     CONTENT
+     FORM CONTENT
 ===================================================== -->
 
 <div
@@ -1558,9 +1509,7 @@ body {
 </div>
 
 
-<!-- =====================================================
-     SELECTED JOB
-===================================================== -->
+<!-- SELECTED JOB -->
 
 <div
     class="selected-job"
@@ -1569,9 +1518,7 @@ body {
 
     Applying for:
 
-    <span
-        id="selectedJobName"
-    ></span>
+    <span id="selectedJobName"></span>
 
 </div>
 
@@ -1583,31 +1530,11 @@ body {
 <form id="candidateForm">
 
 
-<!-- Hidden CEIPAL fields -->
-
-<input
-    type="hidden"
-    id="ceipalJobId"
->
-
-
-<input
-    type="hidden"
-    id="jobCode"
->
-
-
-<input
-    type="hidden"
-    id="ceipalApplyUrl"
->
-
-
 <div class="form">
 
 
 <!-- =====================================================
-     01 PERSONAL
+     01 PERSONAL INFORMATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1617,12 +1544,13 @@ body {
 </div>
 
 
+<!-- FULL NAME -->
+
 <div class="form-group">
 
     <label for="fullName">
 
         Full Name
-
         <span class="required">*</span>
 
     </label>
@@ -1639,12 +1567,13 @@ body {
 </div>
 
 
+<!-- PHONE -->
+
 <div class="form-group">
 
     <label for="phone">
 
         Phone Number
-
         <span class="required">*</span>
 
     </label>
@@ -1671,12 +1600,13 @@ body {
 </div>
 
 
+<!-- EMAIL -->
+
 <div class="form-group">
 
     <label for="email">
 
         Email Address
-
         <span class="required">*</span>
 
     </label>
@@ -1703,12 +1633,13 @@ body {
 </div>
 
 
+<!-- LINKEDIN -->
+
 <div class="form-group">
 
     <label for="linkedin">
 
         LinkedIn Profile
-
         <span class="required">*</span>
 
     </label>
@@ -1735,7 +1666,7 @@ body {
 
 
 <!-- =====================================================
-     02 PROFESSIONAL
+     02 PROFESSIONAL INFORMATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1744,6 +1675,8 @@ body {
 
 </div>
 
+
+<!-- LAST WORKING DAY -->
 
 <div class="form-group">
 
@@ -1762,12 +1695,13 @@ body {
 </div>
 
 
+<!-- NOTICE PERIOD -->
+
 <div class="form-group">
 
     <label for="noticePeriod">
 
         Notice Period (Days)
-
         <span class="required">*</span>
 
     </label>
@@ -1795,6 +1729,8 @@ body {
 </div>
 
 
+<!-- CURRENT CTC -->
+
 <div class="form-group">
 
     <label for="currentCTC">
@@ -1814,6 +1750,8 @@ body {
 
 </div>
 
+
+<!-- EXPECTED CTC -->
 
 <div class="form-group">
 
@@ -1836,7 +1774,7 @@ body {
 
 
 <!-- =====================================================
-     03 JOB
+     03 JOB APPLICATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1846,12 +1784,13 @@ body {
 </div>
 
 
+<!-- JOB APPLIED -->
+
 <div class="form-group job-applied">
 
     <label for="jobApplied">
 
         Job Applied For
-
         <span class="required">*</span>
 
     </label>
@@ -1877,16 +1816,15 @@ body {
 </div>
 
 
+<!-- RESUME -->
+
 <div class="form-group resume-url">
 
     <label for="resumePortfolioUrl">
 
         Resume / Portfolio URL
-
         <span class="optional">
-
             (Optional)
-
         </span>
 
     </label>
@@ -1895,7 +1833,7 @@ body {
     <input
         type="url"
         id="resumePortfolioUrl"
-        placeholder="https://drive.google.com/... "
+        placeholder="https://drive.google.com/..."
     >
 
 
@@ -1912,7 +1850,7 @@ body {
 
 
 <!-- =====================================================
-     04 OPPORTUNITY
+     04 OPPORTUNITY & LOCATION
 ===================================================== -->
 
 <div class="section-heading">
@@ -1921,6 +1859,8 @@ body {
 
 </div>
 
+
+<!-- OPPORTUNITY -->
 
 <div class="form-group opportunity">
 
@@ -1978,12 +1918,13 @@ body {
 </div>
 
 
+<!-- LOCATION -->
+
 <div class="form-group location">
 
     <label for="preferredLocation">
 
         Preferred Location
-
         <span class="required">*</span>
 
     </label>
@@ -2028,19 +1969,21 @@ body {
             class="linkedin-button"
         >
 
+
             <svg
                 class="linkedin-icon"
                 viewBox="0 0 24 24"
             >
 
                 <path
-                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V8.99H3.54v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
+                    d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.99h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0-4.14 2.07 2.07 0 0 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM3.54 20.45H7.1V8.99H3.54v11.46zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"
                 />
 
             </svg>
 
 
             LinkedIn
+
 
         </a>
 
@@ -2075,7 +2018,7 @@ body {
 
 
 <!-- =====================================================
-     SUCCESS
+     SUCCESS SCREEN
 ===================================================== -->
 
 <div
@@ -2158,32 +2101,65 @@ body {
 <script>
 
 /* =====================================================
-   CONFIGURATION
+   GOOGLE APPS SCRIPT URL
 ===================================================== */
-
-
-/*
-   IMPORTANT:
-
-   Replace this with the WEB APP URL of your
-   CEIPAL -> Google Apps Script.
-
-   Example:
-
-   https://script.google.com/macros/s/XXXXX/exec
-*/
-
-const JOBS_API_URL =
-    "YOUR_CEIPAL_JOBS_GOOGLE_SCRIPT_URL";
-
-
-/*
-   Your existing Candidate Application
-   Google Apps Script URL.
-*/
 
 const APPLICATION_API_URL =
     "https://script.google.com/macros/s/AKfycbzUzsh9eyHIAZPmYrNVLWe9YK7gwaY9bnBaiBAtFj4iMcoKpKf6p3_ez64NyxCtrxd2/exec";
+
+
+/* =====================================================
+   DUMMY JOBS
+===================================================== */
+
+const jobs = [
+
+    {
+        title: "Senior Java Developer",
+        location: "Bangalore"
+    },
+
+    {
+        title: "MuleSoft Developer",
+        location: "Remote"
+    },
+
+    {
+        title: "AEM Developer",
+        location: "Hyderabad"
+    },
+
+    {
+        title: "Salesforce Developer",
+        location: "Pune"
+    },
+
+    {
+        title: "Dynamics 365 CRM Developer",
+        location: "Remote"
+    },
+
+    {
+        title: "Java Tech Lead",
+        location: "Chennai"
+    },
+
+    {
+        title: "DevOps Engineer",
+        location: "Bangalore"
+    },
+
+    {
+        title: "React Developer",
+        location: "Mumbai"
+    },
+
+    {
+        title: "Business Analyst",
+        location: "Delhi NCR"
+    }
+
+];
 
 
 /* =====================================================
@@ -2245,7 +2221,7 @@ const statusMessage =
 
 
 /* =====================================================
-   INPUTS
+   FORM INPUTS
 ===================================================== */
 
 const fullName =
@@ -2314,24 +2290,6 @@ const preferredLocation =
     );
 
 
-const ceipalJobId =
-    document.getElementById(
-        "ceipalJobId"
-    );
-
-
-const jobCode =
-    document.getElementById(
-        "jobCode"
-    );
-
-
-const ceipalApplyUrl =
-    document.getElementById(
-        "ceipalApplyUrl"
-    );
-
-
 /* =====================================================
    ERROR ELEMENTS
 ===================================================== */
@@ -2370,13 +2328,6 @@ const resumeUrlError =
     document.getElementById(
         "resumeUrlError"
     );
-
-
-/* =====================================================
-   JOB STORAGE
-===================================================== */
-
-let liveJobs = [];
 
 
 /* =====================================================
@@ -2448,9 +2399,7 @@ function validateURL(value) {
 
 function validateNotice(value) {
 
-    if (
-        value === ""
-    ) {
+    if (value === "") {
 
         return false;
 
@@ -2470,7 +2419,7 @@ function validateNotice(value) {
 
 
 /* =====================================================
-   ERROR FUNCTIONS
+   ERROR HANDLING
 ===================================================== */
 
 function showError(
@@ -2514,22 +2463,27 @@ function hideError(
 function escapeHTML(value) {
 
     return String(value)
+
         .replace(
             /&/g,
             "&amp;"
         )
+
         .replace(
             /</g,
             "&lt;"
         )
+
         .replace(
             />/g,
             "&gt;"
         )
+
         .replace(
             /"/g,
             "&quot;"
         )
+
         .replace(
             /'/g,
             "&#039;"
@@ -2539,187 +2493,40 @@ function escapeHTML(value) {
 
 
 /* =====================================================
-   LOAD LIVE CEIPAL JOBS
+   CREATE JOB TICKER
 ===================================================== */
 
-async function loadLiveJobs() {
-
-    if (
-        !JOBS_API_URL ||
-        JOBS_API_URL ===
-        "YOUR_CEIPAL_JOBS_GOOGLE_SCRIPT_URL"
-    ) {
-
-        tickerTrack.innerHTML = `
-
-            <span class="ticker-error">
-
-                Jobs API URL is not configured.
-
-            </span>
-
-        `;
-
-        return;
-
-    }
+function createTicker() {
 
 
-    tickerTrack.innerHTML = `
-
-        <span class="ticker-loading">
-
-            Loading live jobs from CEIPAL...
-
-        </span>
-
-    `;
-
-
-    try {
-
-        const response =
-            await fetch(
-                JOBS_API_URL +
-                "?t=" +
-                Date.now(),
-                {
-                    method: "GET",
-
-                    cache: "no-store"
-                }
-            );
-
-
-        if (
-            !response.ok
-        ) {
-
-            throw new Error(
-                "HTTP " +
-                response.status
-            );
-
-        }
-
-
-        const data =
-            await response.json();
-
-
-        console.log(
-            "CEIPAL Jobs:",
-            data
-        );
-
-
-        if (
-            !data.success
-        ) {
-
-            throw new Error(
-                data.error ||
-                "Unable to retrieve jobs"
-            );
-
-        }
-
-
-        liveJobs =
-            Array.isArray(
-                data.jobs
-            )
-                ? data.jobs
-                : [];
-
-
-        if (
-            liveJobs.length === 0
-        ) {
-
-            tickerTrack.innerHTML = `
-
-                <span class="ticker-empty">
-
-                    No live job openings available.
-
-                </span>
-
-            `;
-
-            return;
-
-        }
-
-
-        renderTicker(
-            liveJobs
-        );
-
-    }
-
-
-    catch (
-        error
-    ) {
-
-        console.error(
-            "CEIPAL Jobs Error:",
-            error
-        );
-
-
-        tickerTrack.innerHTML = `
-
-            <span class="ticker-error">
-
-                Unable to load jobs. Please refresh.
-
-            </span>
-
-        `;
-
-    }
-
-}
-
-
-/* =====================================================
-   RENDER TICKER
-===================================================== */
-
-function renderTicker(jobs) {
-
-    const makeJob =
+    const createJob =
         function(job) {
-
-            const location =
-                job.location
-                    ? " — " +
-                      escapeHTML(
-                          job.location
-                      )
-                    : "";
-
 
             return `
 
                 <button
                     type="button"
                     class="ticker-item"
-                    data-job-id="${escapeHTML(job.id)}"
-                    title="Apply for ${escapeHTML(job.title)}"
+                    data-job="${escapeHTML(job.title)}"
                 >
 
                     <span
                         class="ticker-dot"
                     ></span>
 
+
                     <span>
 
                         ${escapeHTML(job.title)}
 
-                        ${location}
+                    </span>
+
+
+                    <span
+                        class="ticker-location"
+                    >
+
+                        — ${escapeHTML(job.location)}
 
                     </span>
 
@@ -2730,22 +2537,25 @@ function renderTicker(jobs) {
         };
 
 
-    const html =
+    const tickerHTML =
         jobs
-        .map(
-            makeJob
-        )
-        .join("");
+            .map(createJob)
+            .join("");
 
 
     /*
-       Duplicate for continuous ticker.
+       Duplicate ticker content
+       for continuous animation.
     */
 
     tickerTrack.innerHTML =
-        html +
-        html;
+        tickerHTML +
+        tickerHTML;
 
+
+    /*
+       Make every job clickable.
+    */
 
     tickerTrack
         .querySelectorAll(
@@ -2758,33 +2568,9 @@ function renderTicker(jobs) {
                     "click",
                     function() {
 
-                        const jobId =
-                            button.dataset.jobId;
-
-
-                        const job =
-                            liveJobs.find(
-                                function(item) {
-
-                                    return String(
-                                        item.id
-                                    ) === String(
-                                        jobId
-                                    );
-
-                                }
-                            );
-
-
-                        if (
-                            job
-                        ) {
-
-                            selectJob(
-                                job
-                            );
-
-                        }
+                        selectJob(
+                            button.dataset.job
+                        );
 
                     }
                 );
@@ -2799,47 +2585,16 @@ function renderTicker(jobs) {
    SELECT JOB
 ===================================================== */
 
-function selectJob(job) {
-
-    if (
-        !job
-    ) {
-
-        return;
-
-    }
-
-
-    /*
-       Automatically fill Job Applied.
-    */
+function selectJob(
+    jobTitle
+) {
 
     jobApplied.value =
-        job.title || "";
+        jobTitle;
 
-
-    /*
-       Save CEIPAL information.
-    */
-
-    ceipalJobId.value =
-        job.id || "";
-
-
-    jobCode.value =
-        job.jobCode || "";
-
-
-    ceipalApplyUrl.value =
-        job.applyUrl || "";
-
-
-    /*
-       Display selected job.
-    */
 
     selectedJobName.textContent =
-        job.title || "";
+        jobTitle;
 
 
     selectedJob.classList.add(
@@ -2852,25 +2607,11 @@ function selectJob(job) {
         jobAppliedError
     );
 
-
-    /*
-       Bring selected job field
-       into view.
-    */
-
-    jobApplied.scrollIntoView({
-
-        behavior: "smooth",
-
-        block: "center"
-
-    });
-
 }
 
 
 /* =====================================================
-   LIVE VALIDATION
+   LIVE FIELD VALIDATION
 ===================================================== */
 
 email.addEventListener(
@@ -3001,18 +2742,22 @@ resumePortfolioUrl.addEventListener(
 
 
 /* =====================================================
-   SUBMIT APPLICATION
+   SUBMIT FORM
 ===================================================== */
 
 form.addEventListener(
     "submit",
-    async function(event) {
+    function(event) {
 
         event.preventDefault();
 
 
         hideStatus();
 
+
+        /*
+           HTML validation
+        */
 
         if (
             !form.checkValidity()
@@ -3025,7 +2770,9 @@ form.addEventListener(
         }
 
 
-        /* PHONE */
+        /*
+           Phone
+        */
 
         if (
             !validatePhone(
@@ -3045,7 +2792,9 @@ form.addEventListener(
         }
 
 
-        /* EMAIL */
+        /*
+           Email
+        */
 
         if (
             !validateEmail(
@@ -3065,7 +2814,9 @@ form.addEventListener(
         }
 
 
-        /* LINKEDIN */
+        /*
+           LinkedIn
+        */
 
         if (
             !validateLinkedIn(
@@ -3085,7 +2836,9 @@ form.addEventListener(
         }
 
 
-        /* NOTICE */
+        /*
+           Notice Period
+        */
 
         if (
             !validateNotice(
@@ -3105,7 +2858,9 @@ form.addEventListener(
         }
 
 
-        /* JOB */
+        /*
+           Job Applied
+        */
 
         if (
             !jobApplied.value.trim()
@@ -3123,13 +2878,20 @@ form.addEventListener(
         }
 
 
-        /* RESUME / PORTFOLIO */
+        /*
+           Optional Resume/Portfolio
+        */
 
         if (
-            resumePortfolioUrl.value.trim() !== "" &&
+
+            resumePortfolioUrl.value.trim() !== ""
+
+            &&
+
             !validateURL(
                 resumePortfolioUrl.value.trim()
             )
+
         ) {
 
             showError(
@@ -3144,6 +2906,10 @@ form.addEventListener(
         }
 
 
+        /*
+           Disable submit button.
+        */
+
         submitButton.disabled =
             true;
 
@@ -3153,9 +2919,8 @@ form.addEventListener(
 
 
         /*
-           IMPORTANT:
-           Only the requested Google Sheet
-           columns are sent.
+           EXACT DATA STRUCTURE
+           MATCHES GOOGLE APPS SCRIPT
         */
 
         const data = {
@@ -3185,11 +2950,9 @@ form.addEventListener(
                 expectedCTC.value,
 
             opportunity:
-                document
-                .querySelector(
+                document.querySelector(
                     'input[name="opportunity"]:checked'
-                )
-                .value,
+                ).value,
 
             preferredLocation:
                 preferredLocation.value.trim(),
@@ -3203,9 +2966,24 @@ form.addEventListener(
         };
 
 
+        console.log(
+            "Submitting candidate:",
+            data
+        );
+
+
+        /*
+           IMPORTANT:
+
+           no-cors means the browser cannot read
+           Google's response.
+
+           Therefore we do NOT await fetch().
+        */
+
         try {
 
-            await fetch(
+            fetch(
                 APPLICATION_API_URL,
                 {
 
@@ -3229,17 +3007,27 @@ form.addEventListener(
             );
 
 
-            showSuccess();
+            /*
+               Show success after a short delay.
+            */
+
+            setTimeout(
+                function() {
+
+                    showSuccess();
+
+                },
+                800
+            );
+
 
         }
-
 
         catch (
             error
         ) {
 
             console.error(
-                "Application error:",
                 error
             );
 
@@ -3263,7 +3051,7 @@ form.addEventListener(
 
 
 /* =====================================================
-   SUCCESS
+   SHOW SUCCESS
 ===================================================== */
 
 function showSuccess() {
@@ -3279,7 +3067,7 @@ function showSuccess() {
 
 
 /* =====================================================
-   BACK TO APPLICATION
+   BACK TO FORM
 ===================================================== */
 
 homeButton.addEventListener(
@@ -3287,18 +3075,6 @@ homeButton.addEventListener(
     function() {
 
         form.reset();
-
-
-        ceipalJobId.value =
-            "";
-
-
-        jobCode.value =
-            "";
-
-
-        ceipalApplyUrl.value =
-            "";
 
 
         selectedJob.classList.remove(
@@ -3374,7 +3150,9 @@ homeButton.addEventListener(
    STATUS
 ===================================================== */
 
-function showStatus(message) {
+function showStatus(
+    message
+) {
 
     statusMessage.textContent =
         message;
@@ -3407,20 +3185,10 @@ function hideStatus() {
 
 
 /* =====================================================
-   INITIAL JOB LOAD
+   START TICKER
 ===================================================== */
 
-loadLiveJobs();
-
-
-/*
-   Refresh CEIPAL jobs every 5 minutes.
-*/
-
-setInterval(
-    loadLiveJobs,
-    5 * 60 * 1000
-);
+createTicker();
 
 </script>
 
